@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
+import 'home_app.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,6 +14,6 @@ class MyApp extends StatelessWidget {
         ),
         title: 'Material App',
         debugShowCheckedModeBanner: false,
-        home: home());
+        home: homeApp());
   }
 }
