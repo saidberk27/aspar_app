@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class inputAlan extends StatelessWidget {
+class InputAlan extends StatelessWidget {
   String? tur;
-  inputAlan(this.tur, {Key? key}) : super(key: key);
+  InputAlan(this.tur, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class inputAlan extends StatelessWidget {
         padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
         child: TextFormField(
           autofocus: true,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
               labelText: "E - Mail",
               hintText: "E-Mail",
               prefixIcon: Icon(Icons.email_outlined),
@@ -26,7 +26,7 @@ class inputAlan extends StatelessWidget {
             const EdgeInsets.only(top: 40, left: 20, right: 20, bottom: 15),
         child: TextFormField(
           obscureText: true,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
               labelText: "Password",
               hintText: "Password",
               prefixIcon: Icon(Icons.password_sharp),
@@ -39,7 +39,7 @@ class inputAlan extends StatelessWidget {
       return Padding(
         padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
         child: TextFormField(
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
               labelText: "E - Mail",
               hintText: "E-Mail",
               prefixIcon: Icon(Icons.email_outlined),

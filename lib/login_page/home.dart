@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'login.dart';
 import 'logoarea.dart';
 
-class home extends StatelessWidget {
-  const home({Key? key}) : super(key: key);
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class home extends StatelessWidget {
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [LogoArea(), loginPage()],
+        children: const [LogoArea(), loginPage()],
       )),
     );
   }

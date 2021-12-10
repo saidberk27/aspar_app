@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'user_information.dart';
+import 'drawer_user_information.dart';
 import 'draw_menu_items.dart';
 
-class drawer_menu extends StatelessWidget {
-  const drawer_menu({
+class DrawerMenu extends StatelessWidget {
+  const DrawerMenu({
     Key? key,
   }) : super(key: key);
 
@@ -11,11 +11,11 @@ class drawer_menu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(
-        children: [
-          user_information(),
+        children: const [
+          UserInformation(),
           Flexible(
             // Onbound Error Cozum Expanded Widget
-            child: menu_items(),
+            child: MenuItems(),
           )
         ],
       ),

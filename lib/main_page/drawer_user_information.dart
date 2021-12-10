@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class user_information extends StatelessWidget {
-  const user_information({
+class UserInformation extends StatelessWidget {
+  const UserInformation({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return UserAccountsDrawerHeader(
+    return const UserAccountsDrawerHeader(
       accountName: Text(
         "KULLANICI ADI",
         style: TextStyle(
@@ -19,7 +19,7 @@ class user_information extends StatelessWidget {
             fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white60),
       ),
       currentAccountPicture: CircleAvatar(
-        child: const Text(
+        child: Text(
           "AS",
           style: TextStyle(
               fontWeight: FontWeight.bold, fontSize: 40, color: Colors.black),

@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
-import 'home_app.dart';
+import 'login_page/home.dart';
+import 'main_page/home_app.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: ThemeData(
-          primaryColor: Color(0xFF0FA9EA),
+          primaryColor: const Color(0xFF0FA9EA),
           fontFamily: 'Arial',
         ),
         title: 'Material App',
         debugShowCheckedModeBanner: false,
-        home: homeApp());
+        home: const HomeApp());
   }
 }

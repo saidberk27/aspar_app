@@ -7,7 +7,7 @@ class LogoArea extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12.0),
-      child: Container(
+      child: SizedBox(
         width: 300,
         child: Image.asset('assets/images/asparlogo.png'),
       ),
