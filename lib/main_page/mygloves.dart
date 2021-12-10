@@ -5,8 +5,6 @@ class MyGloves extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: const Text("MyGloves"),
-    );
+    return Center(child: Text("My Gloves"));
   }
 }

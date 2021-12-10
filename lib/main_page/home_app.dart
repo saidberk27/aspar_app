@@ -41,7 +41,7 @@ class _HomeAppState extends State<HomeApp> {
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.fiber_new_outlined),
-          label: "BLOG",
+          label: "ABOUT US",
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
