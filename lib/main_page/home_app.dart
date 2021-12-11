@@ -21,9 +21,9 @@ class _HomeAppState extends State<HomeApp> {
   @override
   void initState() {
     // TODO: implement initState
-    blog_sayfa = Blog();
-    glove_sayfa = MyGloves();
-    home_sayfa = HomePage();
+    blog_sayfa = const Blog();
+    glove_sayfa = const MyGloves();
+    home_sayfa = const HomePage();
     tumSayfalar = [blog_sayfa, home_sayfa, glove_sayfa];
   }
 

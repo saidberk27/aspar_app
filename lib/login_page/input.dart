@@ -21,7 +21,6 @@ class InputAlanState extends State<InputAlan> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     _emailKontroller.dispose();
     _sifreKontroller.dispose();
     super.dispose();

@@ -11,10 +11,10 @@ class MyGloves extends StatelessWidget {
           int indexNoShift = index + 1;
           return ExpansionTile(
             title: Text("Glove " + indexNoShift.toString()),
-            leading: Icon(Icons.add),
+            leading: const Icon(Icons.add),
             children: [
               Container(
-                color: Color(0xFF0FA9EA),
+                color: const Color(0xFF0FA9EA),
                 height: 300,
                 width: 500,
                 child: Column(
@@ -23,7 +23,7 @@ class MyGloves extends StatelessWidget {
                       padding: const EdgeInsets.all(18.0),
                       child: Text(
                         "Glove" + indexNoShift.toString(),
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 24,
                             color: Colors.white),
@@ -34,7 +34,7 @@ class MyGloves extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 8.0, top: 16.0),
                       child: Row(
                         children: [
-                          Text(
+                          const Text(
                             "Serial Number:    ",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
@@ -43,7 +43,7 @@ class MyGloves extends StatelessWidget {
                           ),
                           Text(
                             indexNoShift.toString(),
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 18,
                               color: Colors.white,
                             ),
@@ -55,7 +55,7 @@ class MyGloves extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 8.0, top: 16.0),
                       child: Row(
                         children: [
-                          Text(
+                          const Text(
                             "Status:    ",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -63,7 +63,7 @@ class MyGloves extends StatelessWidget {
                               color: Colors.white,
                             ),
                           ),
-                          Text(
+                          const Text(
                             "Active",
                             style: TextStyle(
                               fontSize: 18,
@@ -83,7 +83,7 @@ class MyGloves extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0, top: 16.0),
                       child: Row(
-                        children: [
+                        children: const [
                           Text(
                             "Expiration:    ",
                             style: TextStyle(
