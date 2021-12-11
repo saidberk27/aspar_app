@@ -48,7 +48,7 @@ class _HomeAppState extends State<HomeApp> {
           label: "HOME",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.plus_one),
+          icon: Icon(Icons.add),
           label: "MY GLOVES",
         ),
       ],

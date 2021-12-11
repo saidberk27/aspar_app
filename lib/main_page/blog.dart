@@ -6,9 +6,9 @@ class Blog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: ListView(padding: EdgeInsets.all(12), children: [
-      Padding(
-        padding: const EdgeInsets.only(bottom: 10.0),
+        child: ListView(padding: const EdgeInsets.all(12), children: [
+      const Padding(
+        padding: EdgeInsets.only(bottom: 10.0),
         child: Text(
           "About Us",
           textAlign: TextAlign.center,
@@ -17,13 +17,13 @@ class Blog extends StatelessWidget {
       ),
       Container(
           decoration: BoxDecoration(
-              border: Border.all(width: 5, color: Color(0xFF0FA9EA)),
-              borderRadius: BorderRadius.all(Radius.circular(10.0))),
+              border: Border.all(width: 5, color: const Color(0xFF0FA9EA)),
+              borderRadius: const BorderRadius.all(Radius.circular(10.0))),
           child: Image.network(
             "https://asparenerji.com/wp-content/uploads/2021/11/hakkimizda.jpg",
           )),
-      Padding(
-        padding: const EdgeInsets.only(
+      const Padding(
+        padding: EdgeInsets.only(
             top: 25.0,
             bottom:
                 25.0), // top sadece burada, yukarıdaki padding sikintisindan oturu.
@@ -32,15 +32,15 @@ class Blog extends StatelessWidget {
           style: TextStyle(fontSize: 18),
         ),
       ),
-      Padding(
-        padding: const EdgeInsets.only(bottom: 25.0),
+      const Padding(
+        padding: EdgeInsets.only(bottom: 25.0),
         child: Text(
           "     Kuruluşundan itibaren elektriksel yalıtımlı eldiven üretimi başta olmak üzere üretim grubuna dahil ettiği pek çok ürün için uzun süren arge faaliyetleri yürütmüştür. Firmamız halihazırda ürettiği ürünleri için arge çalışmalarını Ankara Kahramankazan’da kurduğu pilot tesiste yaklaşık 3 senede tamamlamıştır. Araştırma faaliyetleri için firmamız bünyesinde elektriksel testlerin yürütüldüğü bir test laboratuvarı , kimyasal analizlerin ve proseslerin kontrol edildiği bir kimya-malzeme laboratuvarının yanı sıra girdi kontrolleri ve nihai ürünlerin kalite kontrollerinin yapıldığı bir kalite kontrol laboratuvarı bulunmaktadır.",
           style: TextStyle(fontSize: 18),
         ),
       ),
-      Padding(
-        padding: const EdgeInsets.only(bottom: 10.0),
+      const Padding(
+        padding: EdgeInsets.only(bottom: 10.0),
         child: Text(
           "     Türkiye’de yerli imkanlarımızla üretim aşamasından kalite aşamasına  kadar uluslararası ve ulusal standartlara uyan , standartları geliştiren ve yüksek teknolojiyi her aşamada uygulayan bir firma olarak var gücümüzle çalışmaya devam edeceğiz.",
           style: TextStyle(fontSize: 18),

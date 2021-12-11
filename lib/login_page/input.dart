@@ -1,15 +1,39 @@
 import 'package:flutter/material.dart';
 
-class InputAlan extends StatelessWidget {
+class InputAlan extends StatefulWidget {
   String? tur;
   InputAlan(this.tur, {Key? key}) : super(key: key);
 
   @override
+  State<InputAlan> createState() => InputAlanState();
+}
+
+class InputAlanState extends State<InputAlan> {
+  late TextEditingController _emailKontroller = TextEditingController();
+  late TextEditingController _sifreKontroller;
+
+  @override
+  void initState() {
+    super.initState();
+    _emailKontroller = TextEditingController();
+    _sifreKontroller = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _emailKontroller.dispose();
+    _sifreKontroller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    if (tur == "email") {
+    if (widget.tur == "email") {
       return Padding(
         padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
         child: TextFormField(
+          controller: _emailKontroller,
           autofocus: true,
           decoration: const InputDecoration(
               labelText: "E - Mail",
@@ -20,11 +44,12 @@ class InputAlan extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(20.0)))),
         ),
       );
-    } else if (tur == "sifre") {
+    } else if (widget.tur == "sifre") {
       return Padding(
         padding:
             const EdgeInsets.only(top: 40, left: 20, right: 20, bottom: 15),
         child: TextFormField(
+          controller: _sifreKontroller,
           obscureText: true,
           decoration: const InputDecoration(
               labelText: "Password",

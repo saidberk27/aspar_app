@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'input.dart';
+import '/main_page/home_app.dart';
 
 // ignore: camel_case_types
 class loginPage extends StatelessWidget {
@@ -21,7 +22,7 @@ class loginPage extends StatelessWidget {
         children: [
           InputAlan("email"),
           InputAlan("sifre"),
-          const SignInButton()
+          const SignInButton(),
         ],
       ),
     );
@@ -36,7 +37,14 @@ class SignInButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.pushReplacement<void, void>(
+          context,
+          MaterialPageRoute<void>(
+            builder: (BuildContext context) => const HomeApp(),
+          ),
+        );
+      },
       child: const Text("SIGN IN"),
       style: OutlinedButton.styleFrom(
           primary: const Color(0xFF166FC0),

@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -32,22 +33,8 @@ class HomePage extends StatelessWidget {
           style: TextStyle(fontSize: 18),
         ),
       ),
-      Container(
-          decoration: BoxDecoration(
-              border: Border.all(width: 5, color: Color(0xFF0FA9EA)),
-              borderRadius: BorderRadius.all(Radius.circular(10.0))),
-          child: Image.network(
-            "https://www.haberiz.com/wp-content/uploads/2013/12/blog-resmi.jpg",
-          )),
-      Padding(
-        padding: const EdgeInsets.only(
-            top: 25.0,
-            bottom:
-                25.0), // top sadece burada, yukarıdaki padding sikintisindan oturu.
-        child: Text(
-          "     Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,",
-          style: TextStyle(fontSize: 18),
-        ),
+      Divider(
+        thickness: 3,
       ),
       Container(
           decoration: BoxDecoration(
@@ -65,6 +52,29 @@ class HomePage extends StatelessWidget {
           "     Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,",
           style: TextStyle(fontSize: 18),
         ),
+      ),
+      Divider(
+        thickness: 3,
+      ),
+      Container(
+          decoration: BoxDecoration(
+              border: Border.all(width: 5, color: Color(0xFF0FA9EA)),
+              borderRadius: BorderRadius.all(Radius.circular(10.0))),
+          child: Image.network(
+            "https://www.haberiz.com/wp-content/uploads/2013/12/blog-resmi.jpg",
+          )),
+      Padding(
+        padding: const EdgeInsets.only(
+            top: 25.0,
+            bottom:
+                25.0), // top sadece burada, yukarıdaki padding sikintisindan oturu.
+        child: Text(
+          "     Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,Haber Metni Buraya Gelecek,",
+          style: TextStyle(fontSize: 18),
+        ),
+      ),
+      Divider(
+        thickness: 3,
       ),
     ]));
   }
