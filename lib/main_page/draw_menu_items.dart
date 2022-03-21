@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'aboutUs.dart';
+import 'myGlovesCalledFromDrawer.dart';
+import 'contact.dart';
 
 class MenuItems extends StatelessWidget {
   const MenuItems({
@@ -12,7 +15,11 @@ class MenuItems extends StatelessWidget {
       children: [
         const Divider(thickness: 3, color: Color(0xFF166FC0)),
         InkWell(
-          onTap: () {},
+          onTap: () {
+            debugPrint("Tapped");
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (glovesContext) => MyGlovesDrawer()));
+          },
           child: const ListTile(
             leading: Icon(Icons.add_circle_outline_sharp),
             title: Text(
@@ -32,7 +39,10 @@ class MenuItems extends StatelessWidget {
                 trailing: const Icon(Icons.navigate_next_sharp))),
         const Divider(thickness: 3, color: Color(0xFF166FC0)),
         InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (newsContext) => Blog()));
+            },
             child: const ListTile(
                 leading: Icon(Icons.add_box_outlined),
                 title: Text(
@@ -53,7 +63,10 @@ class MenuItems extends StatelessWidget {
         ),
         const Divider(thickness: 3, color: Color(0xFF166FC0)),
         InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (contactContext) => contact()));
+          },
           child: const ListTile(
               leading: Icon(Icons.contact_mail_outlined),
               title: Text(
