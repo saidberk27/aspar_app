@@ -8,7 +8,6 @@ class Blog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: Container(
           child: ListView(padding: const EdgeInsets.all(12), children: [
         const Padding(

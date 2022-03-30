@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'aboutUs.dart';
-import 'myGlovesCalledFromDrawer.dart';
+import 'mygloves.dart';
 import 'contact.dart';
 
 class MenuItems extends StatelessWidget {
@@ -18,7 +18,7 @@ class MenuItems extends StatelessWidget {
           onTap: () {
             debugPrint("Tapped");
             Navigator.of(context).push(MaterialPageRoute(
-                builder: (glovesContext) => MyGlovesDrawer()));
+                builder: (glovesContext) => const MyGloves()));
           },
           child: const ListTile(
             leading: Icon(Icons.add_circle_outline_sharp),
@@ -40,8 +40,8 @@ class MenuItems extends StatelessWidget {
         const Divider(thickness: 3, color: Color(0xFF166FC0)),
         InkWell(
             onTap: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (newsContext) => Blog()));
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (newsContext) => const Blog()));
             },
             child: const ListTile(
                 leading: Icon(Icons.add_box_outlined),
@@ -64,8 +64,8 @@ class MenuItems extends StatelessWidget {
         const Divider(thickness: 3, color: Color(0xFF166FC0)),
         InkWell(
           onTap: () {
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (contactContext) => contact()));
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (contactContext) => const contact()));
           },
           child: const ListTile(
               leading: Icon(Icons.contact_mail_outlined),
