@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 import 'input.dart';
-import '/main_page/home_app.dart';
+import 'package:aspar_main/veritabani/girisyap.dart';
 
 // ignore: camel_case_types
-class loginPage extends StatelessWidget {
+class loginPage extends StatefulWidget {
   const loginPage({Key? key}) : super(key: key);
+
+  @override
+  State<loginPage> createState() => _loginPageState();
+}
+
+class _loginPageState extends State<loginPage> {
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,12 +48,10 @@ class SignInButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return OutlinedButton(
       onPressed: () {
-        Navigator.pushReplacement<void, void>(
-          context,
-          MaterialPageRoute<void>(
-            builder: (BuildContext context) => const HomeApp(),
-          ),
-        );
+        String email = "a@a.com";
+        String sifre = "111111";
+        GirisYap girisYap = GirisYap(email, sifre);
+        girisYap.girisYap(context);
       },
       child: const Text("SIGN IN"),
       style: OutlinedButton.styleFrom(
