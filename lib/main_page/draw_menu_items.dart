@@ -65,7 +65,7 @@ class MenuItems extends StatelessWidget {
         InkWell(
           onTap: () {
             Navigator.of(context).push(MaterialPageRoute(
-                builder: (contactContext) => const contact()));
+                builder: (contactContext) => const Contact()));
           },
           child: const ListTile(
               leading: Icon(Icons.contact_mail_outlined),

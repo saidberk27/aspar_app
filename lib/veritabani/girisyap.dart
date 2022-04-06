@@ -1,22 +1,30 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:aspar_main/main_page/home_app.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class GirisYap extends StatefulWidget {
   late String email;
   late String sifre;
-  static FirebaseAuth _auth = FirebaseAuth.instance;
+  static final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  GirisYap(email, sifre) {
+  GirisYap(email, sifre, {Key? key}) : super(key: key) {
     this.email = email;
     this.sifre = sifre;
   }
 
   void girisYap(BuildContext context) async {
     try {
-      print("$email $sifre ");
       await _auth.signInWithEmailAndPassword(email: email, password: sifre);
 
+      Fluttertoast.showToast(
+          msg: "Giriş Başarılı",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.green,
+          textColor: Colors.white,
+          fontSize: 16.0);
       Navigator.pushReplacement<void, void>(
         context,
         MaterialPageRoute<void>(
@@ -24,7 +32,14 @@ class GirisYap extends StatefulWidget {
         ),
       );
     } catch (e) {
-      debugPrint(e.toString());
+      Fluttertoast.showToast(
+          msg: "Giriş Başarısız Lütfen E-Posta ve Şİfrenizi Kontrol Ediniz",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 2,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0);
     }
   }
 

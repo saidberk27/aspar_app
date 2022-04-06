@@ -1,6 +1,7 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'input.dart';
-import 'package:aspar_main/veritabani/girisyap.dart';
 
 // ignore: camel_case_types
 class loginPage extends StatefulWidget {
@@ -30,35 +31,9 @@ class _loginPageState extends State<loginPage> {
       )),
       child: Column(
         children: [
-          InputAlan("email"),
-          InputAlan("sifre"),
-          const SignInButton(),
+          const InputAlan(),
         ],
       ),
-    );
-  }
-}
-
-class SignInButton extends StatelessWidget {
-  const SignInButton({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return OutlinedButton(
-      onPressed: () {
-        String email = "a@a.com";
-        String sifre = "111111";
-        GirisYap girisYap = GirisYap(email, sifre);
-        girisYap.girisYap(context);
-      },
-      child: const Text("SIGN IN"),
-      style: OutlinedButton.styleFrom(
-          primary: const Color(0xFF166FC0),
-          side: const BorderSide(color: Color(0xFF0FA9EA), width: 2),
-          shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10)))),
     );
   }
 }

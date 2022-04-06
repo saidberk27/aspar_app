@@ -14,17 +14,17 @@ class HomeApp extends StatefulWidget {
 class _HomeAppState extends State<HomeApp> {
   int simdikiIndex = 1;
   late List<Widget> tumSayfalar;
-  late Blog blog_sayfa;
-  late MyGloves glove_sayfa;
-  late HomePage home_sayfa;
+  late Blog blogSayfa;
+  late MyGloves gloveSayfa;
+  late HomePage homeSayfa;
 
   @override
   void initState() {
     // TODO: implement initState
-    blog_sayfa = const Blog();
-    glove_sayfa = const MyGloves();
-    home_sayfa = const HomePage();
-    tumSayfalar = [blog_sayfa, home_sayfa, glove_sayfa];
+    blogSayfa = const Blog();
+    gloveSayfa = const MyGloves();
+    homeSayfa = const HomePage();
+    tumSayfalar = [blogSayfa, homeSayfa, gloveSayfa];
   }
 
   @override
