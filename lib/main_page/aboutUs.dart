@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'drawer_menu.dart';
 
 class Blog extends StatelessWidget {
   const Blog({Key? key}) : super(key: key);
@@ -8,8 +8,7 @@ class Blog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-          child: ListView(padding: const EdgeInsets.all(12), children: [
+      body: ListView(padding: const EdgeInsets.all(12), children: [
         const Padding(
           padding: EdgeInsets.only(bottom: 10.0),
           child: Text(
@@ -49,7 +48,7 @@ class Blog extends StatelessWidget {
             style: TextStyle(fontSize: 18),
           ),
         ),
-      ])),
+      ]),
     );
   }
 }

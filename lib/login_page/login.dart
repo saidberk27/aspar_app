@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'input.dart';
 
-// ignore: camel_case_types
 class loginPage extends StatefulWidget {
   const loginPage({Key? key}) : super(key: key);
 
@@ -30,8 +29,8 @@ class _loginPageState extends State<loginPage> {
         bottom: BorderSide(width: 4.0, color: Color(0xFF0FA9EA)),
       )),
       child: Column(
-        children: [
-          const InputAlan(),
+        children: const [
+          InputAlan(),
         ],
       ),
     );

@@ -17,8 +17,8 @@ class MenuItems extends StatelessWidget {
         InkWell(
           onTap: () {
             debugPrint("Tapped");
-            Navigator.of(context).push(MaterialPageRoute(
-                builder: (glovesContext) => const MyGloves()));
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (glovesContext) => MyGloves()));
           },
           child: const ListTile(
             leading: Icon(Icons.add_circle_outline_sharp),
