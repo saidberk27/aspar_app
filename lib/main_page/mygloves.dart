@@ -12,8 +12,9 @@ class MyGloves extends StatefulWidget {
 
 class _MyGlovesState extends State<MyGloves> {
   FirebaseFirestore _firestore = FirebaseFirestore.instance;
-  Expiration expiration = Expiration();
   String expirationDate = "Error";
+  MaterialColor statusCircleColor = Colors.grey;
+  String statusText = "Error";
   _getGloves() async {
     debugPrint("Get Gloves");
     var response = await _firestore
@@ -30,23 +31,23 @@ class _MyGlovesState extends State<MyGloves> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PaginateFirestore(
-        // Use SliverAppBar in header to make it sticky
-        //header: const SliverToBoxAdapter(child: Text('HEADER')),
-        //footer: const SliverToBoxAdapter(child: Text('FOOTER')),
-        // item builder type is compulsory.
         itemBuilderType:
             PaginateBuilderType.listView, //Change types accordingly
         itemBuilder: (context, documentSnapshots, index) {
           final data = documentSnapshots[index].data() as Map?;
           return ExpansionTile(
+            maintainState: true,
             title: data == null ? const Text('Error in data') : Text("Deneme"),
             leading: const Icon(Icons.add),
             subtitle: Text(documentSnapshots[index].id),
             onExpansionChanged: (bool expansionStatus) {
+              Expiration expiration = Expiration(data!["Basım Tarihi"]);
+
               setState(() {
                 if (expansionStatus) {
-                  expirationDate =
-                      expiration.calculateExpiration(data!["Basım Tarihi"]);
+                  expirationDate = expiration.calculateExpiration();
+                  statusCircleColor = expiration.statusColor();
+                  statusText = expiration.statusString();
                 }
               });
             },
@@ -101,18 +102,20 @@ class _MyGlovesState extends State<MyGloves> {
                               color: Colors.white,
                             ),
                           ),
-                          const Text(
-                            "Active",
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.white,
+                          Expanded(
+                            child: Text(
+                              statusText,
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 8.0),
                             child: Icon(
                               Icons.circle,
-                              color: Colors.green.shade800,
+                              color: statusCircleColor,
                             ),
                           )
                         ],
