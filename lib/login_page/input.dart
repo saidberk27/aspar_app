@@ -10,7 +10,7 @@ class InputAlan extends StatefulWidget {
 }
 
 class InputAlanState extends State<InputAlan> {
-  late TextEditingController _emailKontroller = TextEditingController();
+  late TextEditingController _emailKontroller;
   late TextEditingController _sifreKontroller;
 
   @override
@@ -30,6 +30,8 @@ class InputAlanState extends State<InputAlan> {
   Future<void> saveEmail() async {
     var sharedPreferences = await SharedPreferences.getInstance();
     sharedPreferences.setString("email", _emailKontroller.text);
+    print("EMAİL ------");
+    print(sharedPreferences.getString("email"));
   }
 
   @override
