@@ -45,49 +45,72 @@ class _AddNewGloveState extends State<AddNewGlove> {
                     Text(
                         'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}')
                   else
-                    const Text('Lütfen Eldivenin Üzerindeki\nKarekodu Okutun',
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: const Text(
+                        'Lütfen Eldivenin Üzerindeki\nKarekodu Okutun',
                         style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.center),
+                            color: const Color(0xFF166FC0),
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       Container(
                         margin: const EdgeInsets.all(8),
-                        child: ElevatedButton(
-                            onPressed: () async {
-                              await controller?.toggleFlash();
-                              setState(() {});
+                        child: OutlinedButton(
+                          onPressed: () async {
+                            await controller?.toggleFlash();
+                            setState(() {});
+                          },
+                          child: FutureBuilder(
+                            future: controller?.getFlashStatus(),
+                            builder: (context, snapshot) {
+                              if (snapshot.data == true) {
+                                return Text('Flaşı Kapat');
+                              } else {
+                                return Text("Flaşı Aç");
+                              }
                             },
-                            child: FutureBuilder(
-                              future: controller?.getFlashStatus(),
-                              builder: (context, snapshot) {
-                                if (snapshot.data == true) {
-                                  return Text('Flaşı Kapat');
-                                } else {
-                                  return Text("Flaşı Aç");
-                                }
-                              },
-                            )),
+                          ),
+                          style: OutlinedButton.styleFrom(
+                              primary: const Color(0xFF166FC0),
+                              side: const BorderSide(
+                                  color: Color(0xFF0FA9EA), width: 2),
+                              shape: const RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)))),
+                        ),
                       ),
                       Container(
                         margin: const EdgeInsets.all(8),
-                        child: ElevatedButton(
-                            onPressed: () async {
-                              await controller?.flipCamera();
-                              setState(() {});
+                        child: OutlinedButton(
+                          onPressed: () async {
+                            await controller?.flipCamera();
+                            setState(() {});
+                          },
+                          child: FutureBuilder(
+                            future: controller?.getCameraInfo(),
+                            builder: (context, snapshot) {
+                              if (snapshot.data != null) {
+                                return Text('Kamerayı Çevir');
+                              } else {
+                                return const Text('loading');
+                              }
                             },
-                            child: FutureBuilder(
-                              future: controller?.getCameraInfo(),
-                              builder: (context, snapshot) {
-                                if (snapshot.data != null) {
-                                  return Text('Kamerayı Çevir');
-                                } else {
-                                  return const Text('loading');
-                                }
-                              },
-                            )),
+                          ),
+                          style: OutlinedButton.styleFrom(
+                              primary: const Color(0xFF166FC0),
+                              side: const BorderSide(
+                                  color: Color(0xFF0FA9EA), width: 2),
+                              shape: const RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)))),
+                        ),
                       )
                     ],
                   ),
@@ -112,7 +135,7 @@ class _AddNewGloveState extends State<AddNewGlove> {
       key: qrKey,
       onQRViewCreated: _onQRViewCreated,
       overlay: QrScannerOverlayShape(
-          borderColor: Colors.red,
+          borderColor: const Color(0xFF166FC0),
           borderRadius: 10,
           borderLength: 30,
           borderWidth: 10,
