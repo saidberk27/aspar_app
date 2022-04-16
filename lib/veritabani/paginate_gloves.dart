@@ -2,60 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:paginate_firestore/paginate_firestore.dart';
 import 'package:aspar_main/local_functions/expirationcalculator.dart';
-import 'package:aspar_main/local_functions/userdata.dart';
-import 'package:aspar_main/main_page/add_new_glove.dart';
-import 'package:aspar_main/veritabani/paginate_gloves.dart';
 
-class MyGloves extends StatefulWidget {
-  MyGloves({Key? key}) : super(key: key);
+class GloveDatabase extends StatefulWidget {
+  AsyncSnapshot? snapshot;
+  GloveDatabase(this.snapshot, {Key? key}) : super(key: key);
 
   @override
-  State<MyGloves> createState() => _MyGlovesState();
+  State<GloveDatabase> createState() => _GloveDatabaseState();
+
+  void saveGlove() {
+    debugPrint("Glove Saved");
+  }
 }
 
-class _MyGlovesState extends State<MyGloves> {
+class _GloveDatabaseState extends State<GloveDatabase> {
   String expirationDate = "Error";
   MaterialColor statusCircleColor = Colors.grey;
   String statusText = "Error";
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: FutureBuilder(
-        future: UserData.getEmail,
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-          if (snapshot.data != null) {
-            //snapshot.data userdata'dan gelen email bilgisine esit.
-            return Scaffold(
-              body: GloveDatabase(snapshot),
-              floatingActionButton: FloatingActionButton.extended(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (newsContext) => AddNewGlove()));
-                  },
-                  label: Row(
-                    children: [
-                      Text(
-                        "Tap to Add New Glove\t",
-                        style: TextStyle(fontSize: 18),
-                      ),
-                      Icon(
-                        Icons.add,
-                        size: 24,
-                      )
-                    ],
-                  )),
-            );
-          } else {
-            return const Text(
-                "Something Went Wrong"); // ilk null sonra veri geliyor. henuz cozemedim.
-          }
-        },
-      ),
-    );
-  }
-
-  PaginateFirestore PaginateGloves(AsyncSnapshot<dynamic> snapshot) {
     return PaginateFirestore(
       itemBuilderType: PaginateBuilderType.listView, //Change types accordingly
       itemBuilder: (context, documentSnapshots, index) {
@@ -178,11 +144,11 @@ class _MyGlovesState extends State<MyGloves> {
       // orderBy is compulsory to enable pagination
       query: FirebaseFirestore.instance
           .collection("test")
-          .doc(snapshot
+          .doc(widget.snapshot!
               .data) //snapshot.data userdata'dan gelen email bilgisine esit.
           .collection("class 0"),
       // to fetch real-time data
-      isLive: false,
+      isLive: true,
     );
   }
 }

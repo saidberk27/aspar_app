@@ -1,12 +1,14 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:aspar_main/veritabani/paginate_gloves.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:aspar_main/local_functions/split_data.dart';
+import 'package:aspar_main/veritabani/save_glove.dart';
 
 class AddNewGlove extends StatefulWidget {
-  AddNewGlove({Key? key}) : super(key: key);
+  const AddNewGlove({Key? key}) : super(key: key);
 
   @override
   State<AddNewGlove> createState() => _AddNewGloveState();
@@ -52,8 +54,13 @@ class _AddNewGloveState extends State<AddNewGlove> {
                         Text(SplitData(demoData).getKiloVolt!),
                         Text(SplitData(demoData).getProductionDate!),
                         OutlinedButton(
-                          onPressed: () {},
-                          child: Text("Eldiveni Kaydet"),
+                          onPressed: () {
+                            SaveGlove(
+                                    serialNumber: "TR3223232",
+                                    productionDate: "12.03.2001")
+                                .saveGlovesToDatabase();
+                          },
+                          child: const Text("Eldiveni Kaydet"),
                           style: OutlinedButton.styleFrom(
                               primary: const Color(0xFF166FC0),
                               side: const BorderSide(

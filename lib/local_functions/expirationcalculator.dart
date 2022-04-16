@@ -31,7 +31,6 @@ class Expiration {
   MaterialColor statusColor() {
     initilaze();
     DateTime currentDateObj = DateTime.now();
-    DateTime gloveDateObj = DateTime(gloveYear, gloveMonth, gloveDay);
     int difference = expirationDateObj.difference(currentDateObj).inDays;
     if (difference <= 0) {
       return Colors.red;
@@ -44,7 +43,6 @@ class Expiration {
 
   String statusString() {
     DateTime currentDateObj = DateTime.now();
-    DateTime gloveDateObj = DateTime(gloveYear, gloveMonth, gloveDay);
     int difference = expirationDateObj.difference(currentDateObj).inDays;
 
     if (difference <= 0) {
