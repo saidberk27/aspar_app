@@ -19,7 +19,7 @@ class SaveGlove {
     };
   }
 
-  final moviesRef = FirebaseFirestore.instance
+  final databaseRef = FirebaseFirestore.instance
       .collection("test")
       .doc("a@a.com") //snapshot.data userdata'dan gelen email bilgisine esit.
       .collection("class 0")
@@ -29,8 +29,8 @@ class SaveGlove {
       );
 
   void saveGlovesToDatabase() async {
-    await moviesRef.doc("TR3223232").set(
-          SaveGlove(serialNumber: "TR3223232", productionDate: "12.03.2001"),
+    await databaseRef.doc(serialNumber).set(
+          SaveGlove(serialNumber: serialNumber, productionDate: productionDate),
         );
   }
 }

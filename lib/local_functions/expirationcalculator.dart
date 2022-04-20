@@ -15,11 +15,21 @@ class Expiration {
   late DateTime expirationDateObj;
 
   void initilaze() {
-    gloveDateSplitted = gloveDate.split(".");
-    gloveDay = int.parse(gloveDateSplitted[0]);
-    gloveMonth = int.parse(gloveDateSplitted[1]);
-    gloveYear = int.parse(gloveDateSplitted[2]);
-    expirationDateObj = DateTime(gloveYear, gloveMonth + 6, gloveDay);
+    try {
+      gloveDateSplitted = gloveDate.split(".");
+
+      gloveDay = int.parse(gloveDateSplitted[0]);
+      gloveMonth = int.parse(gloveDateSplitted[1]);
+      gloveYear = int.parse(gloveDateSplitted[2]);
+      expirationDateObj = DateTime(gloveYear, gloveMonth + 6, gloveDay);
+    } catch (e) {
+      gloveDateSplitted = gloveDate.split("/");
+
+      gloveDay = int.parse(gloveDateSplitted[0]);
+      gloveMonth = int.parse(gloveDateSplitted[1]);
+      gloveYear = int.parse(gloveDateSplitted[2]);
+      expirationDateObj = DateTime(gloveYear, gloveMonth + 6, gloveDay);
+    }
   }
 
   String calculateExpiration() {

@@ -11,7 +11,7 @@ class Home extends StatelessWidget {
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const [LogoArea(), loginPage()],
+        children: const [loginPage()],
       )),
     );
   }

@@ -1,11 +1,11 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:aspar_main/veritabani/paginate_gloves.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:aspar_main/local_functions/split_data.dart';
 import 'package:aspar_main/veritabani/save_glove.dart';
+import 'package:aspar_main/main_page/mygloves.dart';
 
 class AddNewGlove extends StatefulWidget {
   const AddNewGlove({Key? key}) : super(key: key);
@@ -33,7 +33,7 @@ class _AddNewGloveState extends State<AddNewGlove> {
   @override
   Widget build(BuildContext context) {
     String demoData =
-        "Safeline ASP-EI 4 TR015C4S10180S 08/04/2022 40kV www.asparenerji .com";
+        "Safeline ASP-EI 4 AU015C4S10180S 08/04/2022 40kV www.asparenerji .com";
     return Scaffold(
       body: Column(
         children: <Widget>[
@@ -54,11 +54,51 @@ class _AddNewGloveState extends State<AddNewGlove> {
                         Text(SplitData(demoData).getKiloVolt!),
                         Text(SplitData(demoData).getProductionDate!),
                         OutlinedButton(
-                          onPressed: () {
-                            SaveGlove(
-                                    serialNumber: "TR3223232",
-                                    productionDate: "12.03.2001")
-                                .saveGlovesToDatabase();
+                          onPressed: () async {
+                            return showDialog<void>(
+                              context: context,
+                              barrierDismissible:
+                                  false, // user must tap button!
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: const Text('Eldiveni Kaydet'),
+                                  content: SingleChildScrollView(
+                                    child: ListBody(
+                                      children: const <Widget>[
+                                        Text(
+                                            'Eldiveni Kaydetmek İstediğine Emin Misin'),
+                                      ],
+                                    ),
+                                  ),
+                                  actions: <Widget>[
+                                    TextButton(
+                                      child: const Text('Onayla'),
+                                      onPressed: () {
+                                        SaveGlove(
+                                                serialNumber:
+                                                    SplitData(demoData)
+                                                        .getSerialNumber!,
+                                                productionDate:
+                                                    SplitData(demoData)
+                                                        .getProductionDate!)
+                                            .saveGlovesToDatabase();
+
+                                        Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                                builder: (myGlovesContext) =>
+                                                    MyGloves()));
+                                      },
+                                    ),
+                                    TextButton(
+                                      child: const Text('Vazgeç'),
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
                           },
                           child: const Text("Eldiveni Kaydet"),
                           style: OutlinedButton.styleFrom(
@@ -79,7 +119,7 @@ class _AddNewGloveState extends State<AddNewGlove> {
                           const Text(
                             'Lütfen Eldivenin Üzerindeki\nKarekodu Okutun',
                             style: TextStyle(
-                                color: const Color(0xFF166FC0),
+                                color: Color(0xFF166FC0),
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold),
                             textAlign: TextAlign.center,
@@ -99,9 +139,9 @@ class _AddNewGloveState extends State<AddNewGlove> {
                                     future: controller?.getFlashStatus(),
                                     builder: (context, snapshot) {
                                       if (snapshot.data == true) {
-                                        return Text('Flaşı Kapat');
+                                        return const Text('Flaşı Kapat');
                                       } else {
-                                        return Text("Flaşı Aç");
+                                        return const Text("Flaşı Aç");
                                       }
                                     },
                                   ),
@@ -125,7 +165,7 @@ class _AddNewGloveState extends State<AddNewGlove> {
                                     future: controller?.getCameraInfo(),
                                     builder: (context, snapshot) {
                                       if (snapshot.data != null) {
-                                        return Text('Kamerayı Çevir');
+                                        return const Text('Kamerayı Çevir');
                                       } else {
                                         return const Text('loading');
                                       }
