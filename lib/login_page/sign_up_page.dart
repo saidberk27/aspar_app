@@ -133,7 +133,12 @@ class _SignUpPageState extends State<SignUpPage> {
                   String _email = _emailController.text;
                   String _password = _sifreController.text;
 
-                  SignUp(_name, _surname, _companyname, _email, _password)
+                  SignUp(
+                          CompanyName: _companyname,
+                          Email: _email,
+                          Name: _name,
+                          Password: _password,
+                          Surname: _surname)
                       .signUpToDB();
                 },
                 child: const Text("Kayıt Ol"),
