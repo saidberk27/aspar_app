@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:aspar_main/veritabani/sign_up.dart';
+import 'homeLogin.dart';
+import 'logoarea.dart';
 
 class SignUpPage extends StatefulWidget {
   SignUpPage({Key? key}) : super(key: key);
@@ -35,122 +37,150 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Flexible(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 40, left: 20, right: 20),
-              child: TextFormField(
-                controller: _nameController,
-                autofocus: true,
-                decoration: const InputDecoration(
-                    labelText: "İsim",
-                    hintText: "İsim",
-                    prefixIcon: Icon(Icons.person),
-                    suffixIcon: Icon(Icons.lock),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20.0)))),
+        body: Padding(
+      padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+      child: Center(
+        child: Container(
+          height: MediaQuery.of(context).size.height / 1.2,
+          decoration: const BoxDecoration(
+              border: Border(
+            top: BorderSide(width: 4.0, color: Color(0xFF0FA9EA)),
+            left: BorderSide(width: 4.0, color: Color(0xFF166FC0)),
+            right: BorderSide(width: 4.0, color: Color(0xFF166FC0)),
+            bottom: BorderSide(width: 4.0, color: Color(0xFF0FA9EA)),
+          )),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("ÜYE OL",
+                  style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      color: const Color(0xFF166FC0))),
+              Flexible(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+                  child: TextFormField(
+                    controller: _nameController,
+                    autofocus: true,
+                    decoration: const InputDecoration(
+                        labelText: "İsim",
+                        hintText: "İsim",
+                        prefixIcon: Icon(Icons.person),
+                        suffixIcon: Icon(Icons.lock),
+                        border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20.0)))),
+                  ),
+                ),
               ),
-            ),
-          ),
-          Flexible(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 40, left: 20, right: 20),
-              child: TextFormField(
-                controller: _surnameController,
-                autofocus: true,
-                decoration: const InputDecoration(
-                    labelText: "Soyisim",
-                    hintText: "Soyisim",
-                    prefixIcon: Icon(Icons.person),
-                    suffixIcon: Icon(Icons.lock),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20.0)))),
+              Flexible(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+                  child: TextFormField(
+                    controller: _surnameController,
+                    autofocus: true,
+                    decoration: const InputDecoration(
+                        labelText: "Soyisim",
+                        hintText: "Soyisim",
+                        prefixIcon: Icon(Icons.person),
+                        suffixIcon: Icon(Icons.lock),
+                        border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20.0)))),
+                  ),
+                ),
               ),
-            ),
-          ),
-          Flexible(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 40, left: 20, right: 20),
-              child: TextFormField(
-                controller: _companyNameController,
-                autofocus: true,
-                decoration: const InputDecoration(
-                    labelText: "Kurum İsmi (İsteğe Bağlı)",
-                    hintText: "Kuurm İsmi",
-                    prefixIcon: Icon(Icons.abc),
-                    suffixIcon: Icon(Icons.lock),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20.0)))),
+              Flexible(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+                  child: TextFormField(
+                    controller: _companyNameController,
+                    autofocus: true,
+                    decoration: const InputDecoration(
+                        labelText: "Kurum İsmi (İsteğe Bağlı)",
+                        hintText: "Kuurm İsmi",
+                        prefixIcon: Icon(Icons.abc),
+                        suffixIcon: Icon(Icons.lock),
+                        border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20.0)))),
+                  ),
+                ),
               ),
-            ),
-          ),
-          Flexible(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 40, left: 20, right: 20),
-              child: TextFormField(
-                controller: _emailController,
-                autofocus: true,
-                decoration: const InputDecoration(
-                    labelText: "E-Posta",
-                    hintText: "E-Posta",
-                    prefixIcon: Icon(Icons.email_outlined),
-                    suffixIcon: Icon(Icons.lock),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20.0)))),
+              Flexible(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+                  child: TextFormField(
+                    controller: _emailController,
+                    autofocus: true,
+                    decoration: const InputDecoration(
+                        labelText: "E-Posta",
+                        hintText: "E-Posta",
+                        prefixIcon: Icon(Icons.email_outlined),
+                        suffixIcon: Icon(Icons.lock),
+                        border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20.0)))),
+                  ),
+                ),
               ),
-            ),
-          ),
-          Flexible(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 40, left: 20, right: 20),
-              child: TextFormField(
-                controller: _sifreController,
-                obscureText: true,
-                decoration: const InputDecoration(
-                    labelText: "Parola",
-                    hintText: "Parola",
-                    prefixIcon: Icon(Icons.password_sharp),
-                    suffixIcon: Icon(Icons.lock),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20.0)))),
+              Flexible(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+                  child: TextFormField(
+                    controller: _sifreController,
+                    obscureText: true,
+                    decoration: const InputDecoration(
+                        labelText: "Parola",
+                        hintText: "Parola",
+                        prefixIcon: Icon(Icons.password_sharp),
+                        suffixIcon: Icon(Icons.lock),
+                        border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20.0)))),
+                  ),
+                ),
               ),
-            ),
-          ),
-          SizedBox(height: 30),
-          Flexible(
-            child: SizedBox(
-              height: 100,
-              width: 240,
-              child: OutlinedButton(
-                onPressed: () async {
-                  print("Tiklandi");
-                  String _name = _nameController.text;
-                  String _surname = _surnameController.text;
-                  String _companyname = _companyNameController.text;
-                  String _email = _emailController.text;
-                  String _password = _sifreController.text;
+              SizedBox(height: 30),
+              Flexible(
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height / 6,
+                  width: 240,
+                  child: OutlinedButton(
+                    onPressed: () async {
+                      print("Tiklandi");
+                      String _name = _nameController.text;
+                      String _surname = _surnameController.text;
+                      String _companyname = _companyNameController.text;
+                      String _email = _emailController.text;
+                      String _password = _sifreController.text;
 
-                  SignUp(
-                          CompanyName: _companyname,
-                          Email: _email,
-                          Name: _name,
-                          Password: _password,
-                          Surname: _surname)
-                      .signUpToDB();
-                },
-                child: const Text("Kayıt Ol"),
-                style: OutlinedButton.styleFrom(
-                    primary: const Color(0xFF166FC0),
-                    side: const BorderSide(color: Color(0xFF0FA9EA), width: 2),
-                    shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)))),
+                      SignUp(
+                              CompanyName: _companyname,
+                              Email: _email,
+                              Name: _name,
+                              Password: _password,
+                              Surname: _surname)
+                          .signUpToDB();
+
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (BuildContext context) => Home()));
+                    },
+                    child: const Text("Kayıt Ol"),
+                    style: OutlinedButton.styleFrom(
+                        primary: const Color(0xFF166FC0),
+                        side: const BorderSide(
+                            color: Color(0xFF0FA9EA), width: 2),
+                        shape: const RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10)))),
+                  ),
+                ),
               ),
-            ),
+            ],
           ),
-        ],
+        ),
       ),
     ));
   }

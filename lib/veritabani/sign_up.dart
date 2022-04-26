@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class SignUp {
   FirebaseAuth auth = FirebaseAuth.instance;
@@ -8,11 +10,11 @@ class SignUp {
             fromFirestore: (snapshot, _) => SignUp.fromJson(snapshot.data()!),
             toFirestore: (movie, _) => movie.toJson(),
           );
-  String Name;
-  String Surname;
-  String CompanyName;
-  String Email;
-  String Password;
+  String? Name;
+  String? Surname;
+  String? CompanyName;
+  String? Email;
+  String? Password;
 
   SignUp(
       {required this.Name,
@@ -40,6 +42,17 @@ class SignUp {
     };
   }
 
+  void showToast(String message, MaterialColor color) {
+    Fluttertoast.showToast(
+        msg: message,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: color,
+        textColor: Colors.white,
+        fontSize: 16.0);
+  }
+
   Future<void> createFireStoreUserData() {
     String fullName = "$Name $Surname"; // İnsan Okuması İçin Human Readable
     CollectionReference users = FirebaseFirestore.instance.collection('users');
@@ -48,7 +61,8 @@ class SignUp {
       'soyisim': Surname, // Stokes and Sons
       'eposta': Email, // 42
       'şirket ismi': CompanyName,
-    }).then((value) => print("User Added"));
+    }).then((value) =>
+        showToast("Üye Olma Başarılı Lütfen Giriş Yapınız", Colors.green));
   }
 
   Future<void> createFireStoreGloveBase() {
@@ -61,31 +75,50 @@ class SignUp {
   }
 
   bool verification() {
-    return true;
+    String emailWithoutSpace = Email!.replaceAll(" ", "");
+    String nameWithoutSpace = Name!.replaceAll(" ", "");
+    String surnameWithoutSpace = Surname!.replaceAll(" ", "");
+    String passwordWithoutSpace = Password!.replaceAll(" ", "");
+    try {
+      if (nameWithoutSpace == "" ||
+          emailWithoutSpace == "" ||
+          surnameWithoutSpace == "" ||
+          passwordWithoutSpace == "") {
+        throw ("Lütfen Her Yeri Eksiksiz Doldurun!");
+      } else {
+        return true;
+      }
+    } catch (e) {
+      showToast(e.toString(), Colors.red);
+      return false;
+    }
   }
 
   Future<void> signUpToDB() async {
     if (verification()) {
-      await createAuth();
-      await createFireStoreUserData();
-      await createFireStoreGloveBase();
+      if (await createAuth()) {
+        await createFireStoreUserData();
+        await createFireStoreGloveBase();
+      }
     }
   }
 
-  Future<void> createAuth() async {
+  Future<bool> createAuth() async {
     try {
       print(Email);
       print(Password);
       UserCredential userCredential = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: Email, password: Password);
+          .createUserWithEmailAndPassword(email: Email!, password: Password!);
+      return true;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        print('The password provided is too weak.');
+        showToast("Şifreniz Çok Zayıf!", Colors.red);
       } else if (e.code == 'email-already-in-use') {
-        print('The account already exists for that email.');
+        showToast("Bu Eposta Hesabıyla Kayıt Zaten Mevcut!", Colors.red);
+      } else if (e.code == 'invalid-email') {
+        showToast("Eposta Adresi Geçersiz!", Colors.red);
       }
-    } catch (e) {
-      print(e);
+      return false;
     }
   }
 }

@@ -1,11 +1,12 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:aspar_main/main_page/mygloves.dart';
+import 'package:aspar_main/veritabani/paginate_gloves.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:aspar_main/local_functions/split_data.dart';
 import 'package:aspar_main/veritabani/save_glove.dart';
-import 'package:aspar_main/main_page/mygloves.dart';
 
 class AddNewGlove extends StatefulWidget {
   const AddNewGlove({Key? key}) : super(key: key);
@@ -33,7 +34,7 @@ class _AddNewGloveState extends State<AddNewGlove> {
   @override
   Widget build(BuildContext context) {
     String demoData =
-        "Safeline ASP-EI 4 AU015C4S10180S 08/04/2022 40kV www.asparenerji .com";
+        "Safeline ASP-EI 4 TR015C4S10180S 08/04/2022 40kV www.asparenerji .com";
     return Scaffold(
       body: Column(
         children: <Widget>[
@@ -45,60 +46,25 @@ class _AddNewGloveState extends State<AddNewGlove> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  if (true) //result != null
+                  if (result != null) //result != null
 
                     Column(
                       children: [
-                        Text(SplitData(demoData).getSerialNumber!),
-                        Text(SplitData(demoData).getGloveType!),
-                        Text(SplitData(demoData).getKiloVolt!),
-                        Text(SplitData(demoData).getProductionDate!),
+                        Text(SplitData(result!.code).getSerialNumber!),
+                        Text(SplitData(result!.code).getGloveType!),
+                        Text(SplitData(result!.code).getKiloVolt!),
+                        Text(SplitData(result!.code).getProductionDate!),
                         OutlinedButton(
-                          onPressed: () async {
-                            return showDialog<void>(
-                              context: context,
-                              barrierDismissible:
-                                  false, // user must tap button!
-                              builder: (BuildContext context) {
-                                return AlertDialog(
-                                  title: const Text('Eldiveni Kaydet'),
-                                  content: SingleChildScrollView(
-                                    child: ListBody(
-                                      children: const <Widget>[
-                                        Text(
-                                            'Eldiveni Kaydetmek İstediğine Emin Misin'),
-                                      ],
-                                    ),
-                                  ),
-                                  actions: <Widget>[
-                                    TextButton(
-                                      child: const Text('Onayla'),
-                                      onPressed: () {
-                                        SaveGlove(
-                                                serialNumber:
-                                                    SplitData(demoData)
-                                                        .getSerialNumber!,
-                                                productionDate:
-                                                    SplitData(demoData)
-                                                        .getProductionDate!)
-                                            .saveGlovesToDatabase();
+                          onPressed: () {
+                            SaveGlove(
+                                    serialNumber: SplitData(result!.code)
+                                        .getSerialNumber!,
+                                    productionDate: SplitData(result!.code)
+                                        .getProductionDate!)
+                                .saveGlovesToDatabase();
 
-                                        Navigator.of(context).push(
-                                            MaterialPageRoute(
-                                                builder: (myGlovesContext) =>
-                                                    MyGloves()));
-                                      },
-                                    ),
-                                    TextButton(
-                                      child: const Text('Vazgeç'),
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                    ),
-                                  ],
-                                );
-                              },
-                            );
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (BuildContext context) => MyGloves()));
                           },
                           child: const Text("Eldiveni Kaydet"),
                           style: OutlinedButton.styleFrom(
@@ -119,7 +85,7 @@ class _AddNewGloveState extends State<AddNewGlove> {
                           const Text(
                             'Lütfen Eldivenin Üzerindeki\nKarekodu Okutun',
                             style: TextStyle(
-                                color: Color(0xFF166FC0),
+                                color: const Color(0xFF166FC0),
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold),
                             textAlign: TextAlign.center,
@@ -139,9 +105,9 @@ class _AddNewGloveState extends State<AddNewGlove> {
                                     future: controller?.getFlashStatus(),
                                     builder: (context, snapshot) {
                                       if (snapshot.data == true) {
-                                        return const Text('Flaşı Kapat');
+                                        return Text('Flaşı Kapat');
                                       } else {
-                                        return const Text("Flaşı Aç");
+                                        return Text("Flaşı Aç");
                                       }
                                     },
                                   ),
@@ -165,8 +131,10 @@ class _AddNewGloveState extends State<AddNewGlove> {
                                     future: controller?.getCameraInfo(),
                                     builder: (context, snapshot) {
                                       if (snapshot.data != null) {
-                                        return const Text('Kamerayı Çevir');
+                                        print(result);
+                                        return Text('Kamerayı Çevir');
                                       } else {
+                                        print(result);
                                         return const Text('loading');
                                       }
                                     },
