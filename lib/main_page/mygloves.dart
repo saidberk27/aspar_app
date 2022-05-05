@@ -27,7 +27,13 @@ class _MyGlovesState extends State<MyGloves> {
           if (snapshot.data != null) {
             //snapshot.data userdata'dan gelen email bilgisine esit.
             return Scaffold(
-              body: GloveDatabase(snapshot), // paginate_gloves.dart
+              body: ListView(
+                scrollDirection: Axis.vertical,
+                children: [
+                  Text("Deneme"),
+                  GloveDatabase(snapshot),
+                ],
+              ), // paginate_gloves.dart
               floatingActionButton: FloatingActionButton.extended(
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(

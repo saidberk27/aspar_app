@@ -1,1 +1,0 @@
-com.example.main / ios bundle (farklı)

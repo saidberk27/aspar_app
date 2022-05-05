@@ -22,14 +22,19 @@ class _GloveDatabaseState extends State<GloveDatabase> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 80),
-      child: PaginateFirestore(
-        itemBuilderType:
-            PaginateBuilderType.listView, //Change types accordingly
-        itemBuilder: (context, documentSnapshots, index) {
-          final data = documentSnapshots[index].data() as Map?;
-          return ExpansionTile(
+    return PaginateFirestore(
+      shrinkWrap: true,
+
+      itemBuilderType: PaginateBuilderType.listView, //Change types accordingly
+      itemBuilder: (context, documentSnapshots, index) {
+        final data = documentSnapshots[index].data() as Map?;
+        return Container(
+          decoration: BoxDecoration(
+              border: Border(
+            top: BorderSide(width: 1.0, color: Color(0xFF0FA9EA)),
+            bottom: BorderSide(width: 1.0, color: Color(0xFF0FA9EA)),
+          )),
+          child: ExpansionTile(
             maintainState: true,
             title: data == null
                 ? const Text('Error in data')
@@ -142,17 +147,17 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                 ),
               )
             ],
-          );
-        },
-        // orderBy is compulsory to enable pagination
-        query: FirebaseFirestore.instance
-            .collection("test")
-            .doc(widget.snapshot!
-                .data) //snapshot.data userdata'dan gelen email bilgisine esit.
-            .collection("class 0"),
-        // to fetch real-time data
-        isLive: true,
-      ),
+          ),
+        );
+      },
+      // orderBy is compulsory to enable pagination
+      query: FirebaseFirestore.instance
+          .collection("test")
+          .doc(widget.snapshot!
+              .data) //snapshot.data userdata'dan gelen email bilgisine esit.
+          .collection("class 0"),
+      // to fetch real-time data
+      isLive: true,
     );
   }
 }

@@ -94,7 +94,7 @@ class InputAlanState extends State<InputAlan> {
               style: TextStyle(
                 color: Color(0xFF0FA9EA),
                 fontWeight: FontWeight.bold,
-                fontSize: 16,
+                fontSize: 15,
               ),
             ),
           )),
