@@ -38,8 +38,15 @@ class _GloveDatabaseState extends State<GloveDatabase> {
             maintainState: true,
             title: data == null
                 ? const Text('Error in data')
-                : Text(documentSnapshots[index].id),
-            leading: const Icon(Icons.add),
+                : Text(
+                    documentSnapshots[index].id,
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+            leading: const Icon(
+              Icons.arrow_drop_down_circle_outlined,
+              size: 36,
+            ),
+            trailing: Image.asset("assets/images/gloves.png"),
             subtitle: Text(documentSnapshots[index].id),
             onExpansionChanged: (bool expansionStatus) {
               Expiration expiration = Expiration(data!["Basım Tarihi"]);

@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:paginate_firestore/paginate_firestore.dart';
-import 'package:aspar_main/local_functions/expirationcalculator.dart';
 import 'package:aspar_main/local_functions/userdata.dart';
 import 'package:aspar_main/main_page/add_new_glove.dart';
 import 'package:aspar_main/veritabani/paginate_gloves.dart';
@@ -30,7 +27,15 @@ class _MyGlovesState extends State<MyGloves> {
               body: ListView(
                 scrollDirection: Axis.vertical,
                 children: [
-                  Text("Deneme"),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text("Kayıtlı Eldivenler",
+                        style: TextStyle(
+                            fontSize: 48,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xFF0FA9EA)),
+                        textAlign: TextAlign.center),
+                  ),
                   GloveDatabase(snapshot),
                 ],
               ), // paginate_gloves.dart
