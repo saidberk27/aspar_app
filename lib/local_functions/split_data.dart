@@ -8,13 +8,13 @@ class SplitData {
   String? productionDate;
   String? kiloVolt;
   String? webSite;
+  String? gloveClass;
   List? splittedData;
 
   void classifyQrCodeData() {
-    splittedData = qrCodeData!.split(' ');
-    gloveType = splittedData![0] +
-        splittedData![1] +
-        splittedData![2]; //Safeline , ASP-EI, 4 kelimeleri
+    splittedData = qrCodeData!.split(' '); // Parcalanacak veri
+    gloveType = splittedData![0] + splittedData![1];
+    gloveClass = splittedData![2]; //Safeline , ASP-EI, 4 kelimeleri
     serialNumber = splittedData![3];
     productionDate = splittedData![4];
     kiloVolt = splittedData![5];
@@ -31,4 +31,5 @@ class SplitData {
   String? get getSerialNumber => serialNumber;
   String? get getProductionDate => productionDate;
   String? get getKiloVolt => kiloVolt;
+  String? get getGloveClass => gloveClass;
 }

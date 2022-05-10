@@ -11,7 +11,7 @@ class MenuItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: const EdgeInsets.all(0),
+      padding: EdgeInsets.zero,
       children: [
         const Divider(thickness: 3, color: Color(0xFF166FC0)),
         InkWell(

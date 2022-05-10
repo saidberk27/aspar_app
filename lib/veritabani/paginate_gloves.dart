@@ -61,9 +61,9 @@ class _GloveDatabaseState extends State<GloveDatabase> {
             },
             children: [
               Container(
-                color: const Color(0xFF0FA9EA),
                 height: 300,
                 width: 500,
+                color: Colors.white,
                 child: Column(
                   children: [
                     const Padding(
@@ -72,8 +72,8 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                         "Safeline Dielectric Gloves",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 24,
-                            color: Colors.white),
+                            fontSize: 32,
+                            color: const Color(0xFF0FA9EA)),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -85,14 +85,14 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                             "Serial Number:    ",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                                color: Colors.white),
+                                fontSize: 24,
+                                color: const Color(0xFF0FA9EA)),
                           ),
                           Text(
                             "${data!['Seri No']}",
                             style: const TextStyle(
-                              fontSize: 18,
-                              color: Colors.white,
+                              fontSize: 21,
+                              color: const Color(0xFF0FA9EA),
                             ),
                           )
                         ],
@@ -103,27 +103,29 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                       child: Row(
                         children: [
                           const Text(
-                            "Status:    ",
+                            "Status:   ",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                              color: Colors.white,
+                              fontSize: 24,
+                              color: const Color(0xFF0FA9EA),
                             ),
                           ),
                           Expanded(
                             child: Text(
                               statusText,
                               style: const TextStyle(
-                                fontSize: 18,
-                                color: Colors.white,
+                                fontSize: 21,
+                                color: const Color(0xFF0FA9EA),
                               ),
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
+                            padding:
+                                const EdgeInsets.only(left: 8.0, right: 12.0),
                             child: Icon(
                               Icons.circle,
                               color: statusCircleColor,
+                              size: 36,
                             ),
                           )
                         ],
@@ -137,14 +139,14 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                             "Expiration:    ",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                                color: Colors.white),
+                                fontSize: 24,
+                                color: const Color(0xFF0FA9EA)),
                           ),
                           Text(
                             expirationDate,
                             style: const TextStyle(
-                              fontSize: 18,
-                              color: Colors.white,
+                              fontSize: 21,
+                              color: const Color(0xFF0FA9EA),
                             ),
                           )
                         ],
