@@ -43,6 +43,10 @@ dependencies:
   paginate_firestore: ^1.0.3
   qr_code_scanner: ^0.7.0
   google_fonts: ^2.3.2
+  ntp: ^2.0.0
+  flutter_kronos: ^0.0.2+2
+
+
 
 dev_dependencies:
   flutter_test:

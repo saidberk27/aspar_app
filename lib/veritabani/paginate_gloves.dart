@@ -69,7 +69,7 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                     const Padding(
                       padding: EdgeInsets.all(18.0),
                       child: Text(
-                        "Safeline Elektrikçi Eldivenleri",
+                        "Safeline Elektriksel Yalıtımlı Kauçuk Eldiven",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 32,

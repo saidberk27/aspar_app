@@ -1,3 +1,5 @@
+import 'package:aspar_main/veritabani/get_today_from_internet.dart';
+
 class SplitData {
   SplitData(this.qrCodeData) {
     this.classifyQrCodeData();
@@ -9,6 +11,7 @@ class SplitData {
   String? kiloVolt;
   String? webSite;
   String? gloveClass;
+  DateTime? today;
   List? splittedData;
 
   void classifyQrCodeData() {
@@ -32,4 +35,6 @@ class SplitData {
   String? get getProductionDate => productionDate;
   String? get getKiloVolt => kiloVolt;
   String? get getGloveClass => gloveClass;
+  Future<String?> get getTodayDate async =>
+      await GetTodayFromInternet().getToday();
 }

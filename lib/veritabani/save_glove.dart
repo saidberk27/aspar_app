@@ -6,20 +6,34 @@ import 'package:fluttertoast/fluttertoast.dart';
 class SaveGlove {
   final String serialNumber;
   final String productionDate;
+  final String classNumber;
+  final String kiloVolt;
+  final String? addDate;
   var databaseRef;
 
-  SaveGlove({required this.serialNumber, required this.productionDate});
+  SaveGlove(
+      {required this.serialNumber,
+      required this.productionDate,
+      required this.classNumber,
+      required this.kiloVolt,
+      required this.addDate});
 
   SaveGlove.fromJson(Map<String, Object?> json)
       : this(
           serialNumber: json['Seri No']! as String,
           productionDate: json['Basım Tarihi']! as String,
+          classNumber: json['Class No']! as String,
+          kiloVolt: json['Kilovolt']! as String,
+          addDate: json['Uygulamaya Eklenme Tarihi']! as String,
         );
 
   Map<String, Object?> toJson() {
     return {
       'Seri No': serialNumber,
       'Basım Tarihi': productionDate,
+      'Class No': classNumber,
+      'Kilovolt': kiloVolt,
+      'Uygulamaya Eklenme Tarihi': addDate
     };
   }
 
@@ -38,7 +52,12 @@ class SaveGlove {
   void saveGlovesToDatabase() async {
     await initializeDatabaseRef();
     await databaseRef.doc(serialNumber).set(
-          SaveGlove(serialNumber: serialNumber, productionDate: productionDate),
+          SaveGlove(
+              serialNumber: serialNumber,
+              productionDate: productionDate,
+              classNumber: classNumber,
+              kiloVolt: kiloVolt,
+              addDate: addDate),
         );
 
     Fluttertoast.showToast(

@@ -2,11 +2,11 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:aspar_main/main_page/mygloves.dart';
-import 'package:aspar_main/veritabani/paginate_gloves.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:aspar_main/local_functions/split_data.dart';
 import 'package:aspar_main/veritabani/save_glove.dart';
+import 'package:aspar_main/veritabani/get_today_from_internet.dart';
 
 class AddNewGlove extends StatefulWidget {
   const AddNewGlove({Key? key}) : super(key: key);
@@ -34,7 +34,7 @@ class _AddNewGloveState extends State<AddNewGlove> {
   @override
   Widget build(BuildContext context) {
     String demoData =
-        "Safeline ASP-EI 4 TR015C4S10180S 08/04/2022 40kV www.asparenerji .com";
+        "Safeline ASP-EI 4 TR012C4S11001S 10/05/2022 40kV www.asparenerji .com";
     return Scaffold(
       body: Column(
         children: <Widget>[
@@ -46,21 +46,27 @@ class _AddNewGloveState extends State<AddNewGlove> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  if (result != null) //result != null
+                  if (true) //result != null
 
                     Column(
                       children: [
-                        Text(SplitData(result!.code).getSerialNumber!),
-                        Text(SplitData(result!.code).getGloveType!),
-                        Text(SplitData(result!.code).getKiloVolt!),
-                        Text(SplitData(result!.code).getProductionDate!),
+                        Text(SplitData(demoData)
+                            .getSerialNumber!), //Text(SplitData(result!.code).getSerialNumber!)
+                        Text(SplitData(demoData).getGloveType!),
+                        Text(SplitData(demoData).getKiloVolt!),
+                        Text(SplitData(demoData).getProductionDate!),
                         OutlinedButton(
-                          onPressed: () {
+                          onPressed: () async {
                             SaveGlove(
-                                    serialNumber: SplitData(result!.code)
-                                        .getSerialNumber!,
-                                    productionDate: SplitData(result!.code)
-                                        .getProductionDate!)
+                                    serialNumber:
+                                        SplitData(demoData).getSerialNumber!,
+                                    productionDate:
+                                        SplitData(demoData).getProductionDate!,
+                                    classNumber:
+                                        SplitData(demoData).getGloveClass!,
+                                    kiloVolt: SplitData(demoData).getKiloVolt!,
+                                    addDate:
+                                        await SplitData(demoData).getTodayDate)
                                 .saveGlovesToDatabase();
 
                             Navigator.of(context).push(MaterialPageRoute(
