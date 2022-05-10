@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:paginate_firestore/paginate_firestore.dart';
 import 'package:aspar_main/local_functions/expirationcalculator.dart';
+import 'package:aspar_main/local_functions/split_data.dart';
 
 class GloveDatabase extends StatefulWidget {
   AsyncSnapshot? snapshot;
@@ -159,7 +160,7 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                                 color: const Color(0xFF0FA9EA)),
                           ),
                           Text(
-                            "10.05.2022",
+                            _formatDate(data['Uygulamaya Eklenme Tarihi']),
                             style: const TextStyle(
                               fontSize: 21,
                               color: const Color(0xFF0FA9EA),
@@ -205,5 +206,15 @@ class _GloveDatabaseState extends State<GloveDatabase> {
       // to fetch real-time data
       isLive: true,
     );
+  }
+
+  String _formatDate(String date) {
+    // date = 2022-05-10 13:12:19.038
+    List splittedDate =
+        date.split(" ")[0].split("-"); // splittedDate = [2022,05,10]
+    String formattedDate =
+        "${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}"; //formattedDate = 10/05/2022
+
+    return formattedDate;
   }
 }

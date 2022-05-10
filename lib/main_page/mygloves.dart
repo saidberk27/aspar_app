@@ -47,7 +47,7 @@ class _MyGlovesState extends State<MyGloves> {
                   label: Row(
                     children: [
                       Text(
-                        "Tap to Add New Glove\t",
+                        "Yeni Eldiven\t",
                         style: TextStyle(fontSize: 18),
                       ),
                       Icon(

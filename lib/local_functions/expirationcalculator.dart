@@ -34,7 +34,7 @@ class Expiration {
 
   String calculateExpiration() {
     initilaze();
-    expirationDate = DateFormat('dd.MM.yyyy').format(expirationDateObj);
+    expirationDate = DateFormat('dd/MM/yyyy').format(expirationDateObj);
     return expirationDate;
   }
 
