@@ -56,11 +56,11 @@ class Expiration {
     int difference = expirationDateObj.difference(currentDateObj).inDays;
 
     if (difference <= 0) {
-      return "DANGEROUS TO USE";
+      return "TEHLİKELİ";
     } else if (difference > 0 && difference <= 90) {
-      return "YOU SHOULD MAKE YOUR GLOVES TESTED SOON";
+      return "TEST ETTİRİLMELİ";
     } else {
-      return "GLOVES ARE SAFE TO USE";
+      return "GÜVENLİ";
     }
   }
 }

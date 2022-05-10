@@ -39,7 +39,7 @@ class _GloveDatabaseState extends State<GloveDatabase> {
             title: data == null
                 ? const Text('Error in data')
                 : Text(
-                    documentSnapshots[index].id,
+                    documentSnapshots[index].id, //  ASP-Eİ YA DA ASP-EİS OLACAK
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
             leading: const Icon(
@@ -61,15 +61,15 @@ class _GloveDatabaseState extends State<GloveDatabase> {
             },
             children: [
               Container(
-                height: 300,
-                width: 500,
+                height: MediaQuery.of(context).size.height / 2.3,
+                width: MediaQuery.of(context).size.width,
                 color: Colors.white,
                 child: Column(
                   children: [
                     const Padding(
                       padding: EdgeInsets.all(18.0),
                       child: Text(
-                        "Safeline Dielectric Gloves",
+                        "Safeline Elektrikçi Eldivenleri",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 32,
@@ -82,7 +82,7 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                       child: Row(
                         children: [
                           const Text(
-                            "Serial Number:    ",
+                            "Seri Numarası:    ",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
@@ -103,29 +103,17 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                       child: Row(
                         children: [
                           const Text(
-                            "Status:   ",
+                            "Sınıf Numarası:    ",
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
+                                color: const Color(0xFF0FA9EA)),
+                          ),
+                          Text(
+                            "CLASS 00",
+                            style: const TextStyle(
+                              fontSize: 21,
                               color: const Color(0xFF0FA9EA),
-                            ),
-                          ),
-                          Expanded(
-                            child: Text(
-                              statusText,
-                              style: const TextStyle(
-                                fontSize: 21,
-                                color: const Color(0xFF0FA9EA),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.only(left: 8.0, right: 12.0),
-                            child: Icon(
-                              Icons.circle,
-                              color: statusCircleColor,
-                              size: 36,
                             ),
                           )
                         ],
@@ -136,7 +124,56 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                       child: Row(
                         children: [
                           const Text(
-                            "Expiration:    ",
+                            "Durum:   ",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 24,
+                              color: const Color(0xFF0FA9EA),
+                            ),
+                          ),
+                          Text(
+                            statusText,
+                            style: const TextStyle(
+                              fontSize: 21,
+                              color: const Color(0xFF0FA9EA),
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Icon(
+                            Icons.circle,
+                            color: statusCircleColor,
+                            size: 36,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0, top: 16.0),
+                      child: Row(
+                        children: [
+                          const Text(
+                            "Eklenme Tarihi:    ",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
+                                color: const Color(0xFF0FA9EA)),
+                          ),
+                          Text(
+                            "10.05.2022",
+                            style: const TextStyle(
+                              fontSize: 21,
+                              color: const Color(0xFF0FA9EA),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0, top: 16.0),
+                      child: Row(
+                        children: [
+                          const Text(
+                            "Son Test Tarihi:    ",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
