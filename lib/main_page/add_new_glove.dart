@@ -34,7 +34,7 @@ class _AddNewGloveState extends State<AddNewGlove> {
   @override
   Widget build(BuildContext context) {
     String demoData =
-        "Safeline ASP-EI 4 TR012C4S11001S 10/05/2022 40kV www.asparenerji .com";
+        "Safeline ASP-EI 4 TR012C4S11002S 10/05/2022 40kV www.asparenerji .com";
     return Scaffold(
       body: Column(
         children: <Widget>[

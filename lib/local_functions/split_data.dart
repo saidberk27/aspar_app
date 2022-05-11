@@ -16,8 +16,8 @@ class SplitData {
 
   void classifyQrCodeData() {
     splittedData = qrCodeData!.split(' '); // Parcalanacak veri
-    gloveType = splittedData![0] + splittedData![1];
-    gloveClass = splittedData![2]; //Safeline , ASP-EI, 4 kelimeleri
+    gloveType = splittedData![0] + splittedData![1]; //Safeline , ASP-EI
+    gloveClass = splittedData![2];
     serialNumber = splittedData![3];
     productionDate = splittedData![4];
     kiloVolt = splittedData![5];

@@ -1,0 +1,6 @@
+- kilovolt verisi ekle
+- drawer menu tasarımı üzerine çalış
+- appbar sorununu çöz
+- font sorununu çöz
+- çok dilli yapmayı araştır
+- asp-ei / asp -eis expanded listtile'a title olarak ver.

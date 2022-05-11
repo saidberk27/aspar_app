@@ -75,10 +75,11 @@ flutter:
     - assets/images/asparlogo.png
     - assets/images/contact-us.jpg
     - assets/images/gloves.png
-
-
-
-
+    - assets/images/new.png
+    - assets/images/info.png
+    - assets/images/help.png
+    - assets/images/contact.png
+    - assets/images/exit.png
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

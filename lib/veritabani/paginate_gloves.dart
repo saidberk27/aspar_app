@@ -62,7 +62,7 @@ class _GloveDatabaseState extends State<GloveDatabase> {
             },
             children: [
               Container(
-                height: MediaQuery.of(context).size.height / 2.3,
+                height: MediaQuery.of(context).size.height / 2,
                 width: MediaQuery.of(context).size.width,
                 color: Colors.white,
                 child: Column(

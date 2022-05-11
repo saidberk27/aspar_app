@@ -13,10 +13,7 @@ class DrawerMenu extends StatelessWidget {
       child: Column(
         children: const [
           UserInformation(),
-          Flexible(
-            // Onbound Error Cozum Expanded Widget
-            child: MenuItems(),
-          )
+          MenuItems(),
         ],
       ),
     );
