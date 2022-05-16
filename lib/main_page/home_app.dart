@@ -37,18 +37,27 @@ class _HomeAppState extends State<HomeApp> {
 
   BottomNavigationBar bottomNav() {
     return BottomNavigationBar(
-      items: const <BottomNavigationBarItem>[
+      items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.fiber_new_outlined),
-          label: "ABOUT US",
+          icon: Image.asset(
+            "assets/images/info.png",
+            scale: 2,
+          ),
+          label: "HAKKIMIZDA",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: "HOME",
+          icon: Image.asset(
+            "assets/images/home.png",
+            scale: 2,
+          ),
+          label: "ANA SAYFA",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.add),
-          label: "MY GLOVES",
+          icon: Image.asset(
+            "assets/images/gloves.png",
+            scale: 2,
+          ),
+          label: "ELDİVENLERİM",
         ),
       ],
       onTap: (index) {

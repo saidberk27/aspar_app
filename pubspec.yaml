@@ -80,6 +80,7 @@ flutter:
     - assets/images/help.png
     - assets/images/contact.png
     - assets/images/exit.png
+    - assets/images/home.png
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

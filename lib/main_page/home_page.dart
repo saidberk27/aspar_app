@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
       const Padding(
         padding: EdgeInsets.only(bottom: 10.0),
         child: Text(
-          "What's New in Aspar?",
+          "Aspar Enerji'den Haberler",
           textAlign: TextAlign.center,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 48),
         ),
