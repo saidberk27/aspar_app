@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:paginate_firestore/paginate_firestore.dart';
 import 'package:aspar_main/local_functions/expirationcalculator.dart';
+import 'package:aspar_main/local_functions/split_data.dart';
 
 class GloveDatabase extends StatefulWidget {
   AsyncSnapshot? snapshot;
@@ -19,17 +20,27 @@ class _GloveDatabaseState extends State<GloveDatabase> {
   String expirationDate = "Error";
   MaterialColor statusCircleColor = Colors.grey;
   String statusText = "Error";
+  late ScrollController _scrollController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _scrollController = ScrollController();
+  }
 
   @override
   Widget build(BuildContext context) {
     return PaginateFirestore(
+      // listview olarak düsün
       shrinkWrap: true,
+      scrollController: _scrollController,
 
       itemBuilderType: PaginateBuilderType.listView, //Change types accordingly
       itemBuilder: (context, documentSnapshots, index) {
         final data = documentSnapshots[index].data() as Map?;
         return Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
               border: Border(
             top: BorderSide(width: 1.0, color: Color(0xFF0FA9EA)),
             bottom: BorderSide(width: 1.0, color: Color(0xFF0FA9EA)),
@@ -40,7 +51,7 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                 ? const Text('Error in data')
                 : Text(
                     documentSnapshots[index].id, //  ASP-Eİ YA DA ASP-EİS OLACAK
-                    style: const TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
             leading: const Icon(
               Icons.arrow_drop_down_circle_outlined,
@@ -50,7 +61,10 @@ class _GloveDatabaseState extends State<GloveDatabase> {
             subtitle: Text(documentSnapshots[index].id),
             onExpansionChanged: (bool expansionStatus) {
               Expiration expiration = Expiration(data!["Basım Tarihi"]);
-
+              _scrollController.animateTo(
+                  _scrollController.position.maxScrollExtent,
+                  duration: Duration(milliseconds: 500),
+                  curve: Curves.easeIn);
               setState(() {
                 if (expansionStatus) {
                   expirationDate = expiration.calculateExpiration();
@@ -73,7 +87,7 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 32,
-                            color: Color(0xFF0FA9EA)),
+                            color: const Color(0xFF0FA9EA)),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -86,13 +100,13 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
-                                color: Color(0xFF0FA9EA)),
+                                color: const Color(0xFF0FA9EA)),
                           ),
                           Text(
                             "${data!['Seri No']}",
                             style: const TextStyle(
                               fontSize: 21,
-                              color: Color(0xFF0FA9EA),
+                              color: const Color(0xFF0FA9EA),
                             ),
                           )
                         ],
@@ -101,19 +115,19 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0, top: 16.0),
                       child: Row(
-                        children: const [
-                          Text(
+                        children: [
+                          const Text(
                             "Sınıf Numarası:    ",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
-                                color: Color(0xFF0FA9EA)),
+                                color: const Color(0xFF0FA9EA)),
                           ),
                           Text(
                             "CLASS 00",
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 21,
-                              color: Color(0xFF0FA9EA),
+                              color: const Color(0xFF0FA9EA),
                             ),
                           )
                         ],
@@ -128,17 +142,17 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 24,
-                              color: Color(0xFF0FA9EA),
+                              color: const Color(0xFF0FA9EA),
                             ),
                           ),
                           Text(
                             statusText,
                             style: const TextStyle(
                               fontSize: 21,
-                              color: Color(0xFF0FA9EA),
+                              color: const Color(0xFF0FA9EA),
                             ),
                           ),
-                          const SizedBox(width: 10),
+                          SizedBox(width: 10),
                           Icon(
                             Icons.circle,
                             color: statusCircleColor,
@@ -156,13 +170,13 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
-                                color: Color(0xFF0FA9EA)),
+                                color: const Color(0xFF0FA9EA)),
                           ),
                           Text(
                             _formatDate(data['Uygulamaya Eklenme Tarihi']),
                             style: const TextStyle(
                               fontSize: 21,
-                              color: Color(0xFF0FA9EA),
+                              color: const Color(0xFF0FA9EA),
                             ),
                           )
                         ],
@@ -177,13 +191,13 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
-                                color: Color(0xFF0FA9EA)),
+                                color: const Color(0xFF0FA9EA)),
                           ),
                           Text(
                             expirationDate,
                             style: const TextStyle(
                               fontSize: 21,
-                              color: Color(0xFF0FA9EA),
+                              color: const Color(0xFF0FA9EA),
                             ),
                           )
                         ],
@@ -201,7 +215,8 @@ class _GloveDatabaseState extends State<GloveDatabase> {
           .collection("test")
           .doc(widget.snapshot!
               .data) //snapshot.data userdata'dan gelen email bilgisine esit.
-          .collection("class 0"),
+          .collection("class 0")
+          .orderBy('Seri No'),
       // to fetch real-time data
       isLive: true,
     );

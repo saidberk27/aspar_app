@@ -45,27 +45,28 @@ class _AddNewGloveState extends State<AddNewGlove> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  if (true) //result != null
+                  if (result != null) //result != null
 
                     Column(
                       children: [
-                        Text(SplitData(demoData)
+                        Text(SplitData(result!.code)
                             .getSerialNumber!), //Text(SplitData(result!.code).getSerialNumber!)
-                        Text(SplitData(demoData).getGloveType!),
-                        Text(SplitData(demoData).getKiloVolt!),
-                        Text(SplitData(demoData).getProductionDate!),
+                        Text(SplitData(result!.code).getGloveType!),
+                        Text(SplitData(result!.code).getKiloVolt!),
+                        Text(SplitData(result!.code).getProductionDate!),
                         OutlinedButton(
                           onPressed: () async {
                             SaveGlove(
-                                    serialNumber:
-                                        SplitData(demoData).getSerialNumber!,
-                                    productionDate:
-                                        SplitData(demoData).getProductionDate!,
+                                    serialNumber: SplitData(result!.code)
+                                        .getSerialNumber!, // TO-DO instance Olusturmayi Dene.
+                                    productionDate: SplitData(result!.code)
+                                        .getProductionDate!,
                                     classNumber:
-                                        SplitData(demoData).getGloveClass!,
-                                    kiloVolt: SplitData(demoData).getKiloVolt!,
-                                    addDate:
-                                        await SplitData(demoData).getTodayDate)
+                                        SplitData(result!.code).getGloveClass!,
+                                    kiloVolt:
+                                        SplitData(result!.code).getKiloVolt!,
+                                    addDate: await SplitData(result!.code)
+                                        .getTodayDate)
                                 .saveGlovesToDatabase();
 
                             Navigator.of(context).push(MaterialPageRoute(
