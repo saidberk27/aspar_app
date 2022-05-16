@@ -1,3 +1,5 @@
+//scroll controllerin nasıl kullanıldığı ile ilgili yazi: https://stackoverflow.com/questions/52403782/how-to-scroll-list-view-builder-of-expansion-tile-auto-scroll-to-the-end-of-list
+
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:paginate_firestore/paginate_firestore.dart';

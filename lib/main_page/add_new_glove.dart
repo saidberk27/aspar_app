@@ -56,6 +56,8 @@ class _AddNewGloveState extends State<AddNewGlove> {
                         Text(SplitData(result!.code).getProductionDate!),
                         OutlinedButton(
                           onPressed: () async {
+                            debugPrint(
+                                "SERİ NUMARASI ----- ${SplitData(result!.code).getSerialNumber!}");
                             SaveGlove(
                                     serialNumber: SplitData(result!.code)
                                         .getSerialNumber!, // TO-DO instance Olusturmayi Dene.

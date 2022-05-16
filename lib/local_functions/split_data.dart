@@ -2,7 +2,7 @@ import 'package:aspar_main/veritabani/get_today_from_internet.dart';
 
 class SplitData {
   SplitData(this.qrCodeData) {
-    classifyQrCodeData();
+    this.classifyQrCodeData();
   }
   String? qrCodeData;
   String? gloveType;
@@ -28,6 +28,12 @@ class SplitData {
     } catch (e) {
       webSite = splittedData![5]; // bitisik basilirsa asparenerji.com aliyor.
     }
+    gloveType = gloveType!.replaceAll("\n", "");
+    gloveClass = gloveClass!.replaceAll("\n", "");
+    serialNumber = serialNumber!.replaceAll("\n", "");
+    productionDate = productionDate!.replaceAll(
+        "\n", ""); // ALT SATIRA GECME VARSA TEMIZLEME -- HATA CIKMAMASI ICIN.
+    kiloVolt = kiloVolt!.replaceAll("\n", "");
   }
 
   String? get getGloveType => gloveType;
