@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:aspar_main/veritabani/sign_up.dart';
 import 'homeLogin.dart';
-import 'logoarea.dart';
 
 class SignUpPage extends StatefulWidget {
-  SignUpPage({Key? key}) : super(key: key);
+  const SignUpPage({Key? key}) : super(key: key);
 
   @override
   State<SignUpPage> createState() => _SignUpPageState();
@@ -52,11 +51,11 @@ class _SignUpPageState extends State<SignUpPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("ÜYE OL",
+              const Text("ÜYE OL",
                   style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
-                      color: const Color(0xFF166FC0))),
+                      color: Color(0xFF166FC0))),
               Flexible(
                 child: Padding(
                   padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
@@ -142,7 +141,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Flexible(
                 child: SizedBox(
                   height: MediaQuery.of(context).size.height / 6,
@@ -157,15 +156,15 @@ class _SignUpPageState extends State<SignUpPage> {
                       String _password = _sifreController.text;
 
                       SignUp(
-                              CompanyName: _companyname,
-                              Email: _email,
-                              Name: _name,
-                              Password: _password,
-                              Surname: _surname)
+                              companyName: _companyname,
+                              email: _email,
+                              name: _name,
+                              password: _password,
+                              surname: _surname)
                           .signUpToDB();
 
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (BuildContext context) => Home()));
+                          builder: (BuildContext context) => const Home()));
                     },
                     child: const Text("Kayıt Ol"),
                     style: OutlinedButton.styleFrom(

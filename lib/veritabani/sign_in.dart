@@ -8,7 +8,7 @@ class GirisYap extends StatefulWidget {
   late String sifre;
   static final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  GirisYap(this.email, this.sifre, {Key? key});
+  GirisYap(this.email, this.sifre, {Key? key}) : super(key: key);
 
   void girisYap(BuildContext context) async {
     try {

@@ -10,35 +10,35 @@ class SignUp {
             fromFirestore: (snapshot, _) => SignUp.fromJson(snapshot.data()!),
             toFirestore: (movie, _) => movie.toJson(),
           );
-  String? Name;
-  String? Surname;
-  String? CompanyName;
-  String? Email;
-  String? Password;
+  String? name;
+  String? surname;
+  String? companyName;
+  String? email;
+  String? password;
 
   SignUp(
-      {required this.Name,
-      required this.Surname,
-      required this.CompanyName,
-      required this.Email,
-      required this.Password});
+      {required this.name,
+      required this.surname,
+      required this.companyName,
+      required this.email,
+      required this.password});
 
   SignUp.fromJson(Map<String, Object?> json)
       : this(
-          Name: json['name']! as String,
-          Surname: json['surname']! as String,
-          CompanyName: json['companyname']! as String,
-          Email: json['email']! as String,
-          Password: json['password']! as String,
+          name: json['name']! as String,
+          surname: json['surname']! as String,
+          companyName: json['companyname']! as String,
+          email: json['email']! as String,
+          password: json['password']! as String,
         );
 
   Map<String, Object?> toJson() {
     return {
-      'name': Name,
-      'surname': Surname,
-      'companyname': CompanyName,
-      'email': Email,
-      'password': Password,
+      'name': name,
+      'surname': surname,
+      'companyname': companyName,
+      'email': email,
+      'password': password,
     };
   }
 
@@ -54,31 +54,31 @@ class SignUp {
   }
 
   Future<void> createFireStoreUserData() {
-    String fullName = "$Name $Surname"; // İnsan Okuması İçin Human Readable
+    String fullName = "$name $surname"; // İnsan Okuması İçin Human Readable
     CollectionReference users = FirebaseFirestore.instance.collection('users');
     return users.doc(fullName).set({
-      'isim': Name, // John Doe
-      'soyisim': Surname, // Stokes and Sons
-      'eposta': Email, // 42
-      'şirket ismi': CompanyName,
+      'isim': name, // John Doe
+      'soyisim': surname, // Stokes and Sons
+      'eposta': email, // 42
+      'şirket ismi': companyName,
     }).then((value) =>
         showToast("Üye Olma Başarılı Lütfen Giriş Yapınız", Colors.green));
   }
 
   Future<void> createFireStoreGloveBase() {
-    String fullName = "$Name $Surname"; // İnsan Okuması İçin Human Readable
+    String fullName = "$name $surname"; // İnsan Okuması İçin Human Readable
     CollectionReference users = FirebaseFirestore.instance.collection('test');
     return users
-        .doc(Email)
+        .doc(email)
         .set({"E-Postanın Bağlı Olduğu Kişi": fullName}).then(
             (value) => print("GloveBase Added"));
   }
 
   bool verification() {
-    String emailWithoutSpace = Email!.replaceAll(" ", "");
-    String nameWithoutSpace = Name!.replaceAll(" ", "");
-    String surnameWithoutSpace = Surname!.replaceAll(" ", "");
-    String passwordWithoutSpace = Password!.replaceAll(" ", "");
+    String emailWithoutSpace = email!.replaceAll(" ", "");
+    String nameWithoutSpace = name!.replaceAll(" ", "");
+    String surnameWithoutSpace = surname!.replaceAll(" ", "");
+    String passwordWithoutSpace = password!.replaceAll(" ", "");
     try {
       if (nameWithoutSpace == "" ||
           emailWithoutSpace == "" ||
@@ -105,10 +105,10 @@ class SignUp {
 
   Future<bool> createAuth() async {
     try {
-      print(Email);
-      print(Password);
+      print(email);
+      print(password);
       UserCredential userCredential = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: Email!, password: Password!);
+          .createUserWithEmailAndPassword(email: email!, password: password!);
       return true;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
