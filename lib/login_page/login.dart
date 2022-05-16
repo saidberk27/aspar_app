@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
           return Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Center(child: LogoArea()),
+              const Center(child: LogoArea()),
               Flexible(
                 child: Container(
                   width: MediaQuery.of(context).size.width / 1.2,

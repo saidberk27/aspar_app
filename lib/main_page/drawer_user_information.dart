@@ -7,7 +7,7 @@ class UserInformation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return UserAccountsDrawerHeader(
+    return const UserAccountsDrawerHeader(
       margin: EdgeInsets.zero,
       decoration: BoxDecoration(
           color: Colors.white,

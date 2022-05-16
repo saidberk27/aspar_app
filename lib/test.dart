@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUp extends StatefulWidget {
-  String Name;
-  String Surname;
-  String CompanyName;
-  String Email;
-  String Password;
-  SignUp(this.Name, this.Surname, this.CompanyName, this.Email, this.Password,
+  String name;
+  String surname;
+  String companyName;
+  String email;
+  String password;
+  SignUp(this.name, this.surname, this.companyName, this.email, this.password,
       {Key? key})
       : super(key: key);
 
@@ -21,19 +21,16 @@ class _SignUpState extends State<SignUp> {
 
   void signUpToDB() async {
     try {
-      print(widget.Email);
-      print(widget.Password);
-      UserCredential userCredential = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(
-              email: widget.Email, password: widget.Password);
+      debugPrint(widget.email);
+      debugPrint(widget.password);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        print('The password provided is too weak.');
+        debugPrint('The password provided is too weak.');
       } else if (e.code == 'email-already-in-use') {
-        print('The account already exists for that email.');
+        debugPrint('The account already exists for that email.');
       }
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
     }
   }
 
@@ -41,7 +38,7 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: OutlinedButton(onPressed: () {}, child: Text("Kaydet")),
+        child: OutlinedButton(onPressed: () {}, child: const Text("Kaydet")),
       ),
     );
   }

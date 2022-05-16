@@ -4,7 +4,7 @@ import 'package:aspar_main/main_page/add_new_glove.dart';
 import 'package:aspar_main/veritabani/paginate_gloves.dart';
 
 class MyGloves extends StatefulWidget {
-  MyGloves({Key? key}) : super(key: key);
+  const MyGloves({Key? key}) : super(key: key);
 
   @override
   State<MyGloves> createState() => _MyGlovesState();
@@ -27,8 +27,8 @@ class _MyGlovesState extends State<MyGloves> {
               body: ListView(
                 scrollDirection: Axis.vertical,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
+                  const Padding(
+                    padding: EdgeInsets.all(10.0),
                     child: Text("Kayıtlı Eldivenler",
                         style: TextStyle(
                             fontSize: 48,
@@ -42,10 +42,10 @@ class _MyGlovesState extends State<MyGloves> {
               floatingActionButton: FloatingActionButton.extended(
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (newsContext) => AddNewGlove()));
+                        builder: (newsContext) => const AddNewGlove()));
                   },
                   label: Row(
-                    children: [
+                    children: const [
                       Text(
                         "Yeni Eldiven\t",
                         style: TextStyle(fontSize: 18),

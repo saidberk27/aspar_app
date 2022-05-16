@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:aspar_main/veritabani/sign_in.dart';
@@ -87,7 +89,7 @@ class InputAlanState extends State<InputAlan> {
                       borderRadius: BorderRadius.all(Radius.circular(10)))),
             ),
           ),
-          Flexible(
+          const Flexible(
               child: Center(
             child: Text(
               "Hesabın Yok Mu? Aspar Enerji'ye Kaydol!",
@@ -102,7 +104,7 @@ class InputAlanState extends State<InputAlan> {
             child: OutlinedButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) => SignUpPage()));
+                    builder: (BuildContext context) => const SignUpPage()));
               },
               child: const Text("KAYIT OL"),
               style: OutlinedButton.styleFrom(

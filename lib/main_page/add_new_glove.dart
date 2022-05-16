@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:aspar_main/local_functions/split_data.dart';
 import 'package:aspar_main/veritabani/save_glove.dart';
-import 'package:aspar_main/veritabani/get_today_from_internet.dart';
 
 class AddNewGlove extends StatefulWidget {
   const AddNewGlove({Key? key}) : super(key: key);
@@ -34,7 +33,7 @@ class _AddNewGloveState extends State<AddNewGlove> {
   @override
   Widget build(BuildContext context) {
     String demoData =
-        "Safeline ASP-EI 4 TR012C4S11002S 10/05/2022 40kV www.asparenerji .com";
+        "Safeline ASP-EI 4 TR012C4S11003A 10/05/2022 40kV www.asparenerji .com";
     return Scaffold(
       body: Column(
         children: <Widget>[
@@ -70,7 +69,8 @@ class _AddNewGloveState extends State<AddNewGlove> {
                                 .saveGlovesToDatabase();
 
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (BuildContext context) => MyGloves()));
+                                builder: (BuildContext context) =>
+                                    const MyGloves()));
                           },
                           child: const Text("Eldiveni Kaydet"),
                           style: OutlinedButton.styleFrom(
@@ -91,7 +91,7 @@ class _AddNewGloveState extends State<AddNewGlove> {
                           const Text(
                             'Lütfen Eldivenin Üzerindeki\nKarekodu Okutun',
                             style: TextStyle(
-                                color: const Color(0xFF166FC0),
+                                color: Color(0xFF166FC0),
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold),
                             textAlign: TextAlign.center,
@@ -111,9 +111,9 @@ class _AddNewGloveState extends State<AddNewGlove> {
                                     future: controller?.getFlashStatus(),
                                     builder: (context, snapshot) {
                                       if (snapshot.data == true) {
-                                        return Text('Flaşı Kapat');
+                                        return const Text('Flaşı Kapat');
                                       } else {
-                                        return Text("Flaşı Aç");
+                                        return const Text("Flaşı Aç");
                                       }
                                     },
                                   ),
@@ -137,10 +137,10 @@ class _AddNewGloveState extends State<AddNewGlove> {
                                     future: controller?.getCameraInfo(),
                                     builder: (context, snapshot) {
                                       if (snapshot.data != null) {
-                                        print(result);
-                                        return Text('Kamerayı Çevir');
+                                        debugPrint(result.toString());
+                                        return const Text('Kamerayı Çevir');
                                       } else {
-                                        print(result);
+                                        debugPrint(result.toString());
                                         return const Text('loading');
                                       }
                                     },

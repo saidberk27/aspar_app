@@ -71,7 +71,7 @@ class SignUp {
     return users
         .doc(email)
         .set({"E-Postanın Bağlı Olduğu Kişi": fullName}).then(
-            (value) => print("GloveBase Added"));
+            (value) => debugPrint("GloveBase Added"));
   }
 
   bool verification() {
@@ -105,10 +105,8 @@ class SignUp {
 
   Future<bool> createAuth() async {
     try {
-      print(email);
-      print(password);
-      UserCredential userCredential = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: email!, password: password!);
+      debugPrint(email);
+      debugPrint(password);
       return true;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:aspar_main/veritabani/sign_up.dart';
-import 'homeLogin.dart';
+import 'home_login.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -148,7 +148,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   width: 240,
                   child: OutlinedButton(
                     onPressed: () async {
-                      print("Tiklandi");
+                      debugPrint("Tiklandi");
                       String _name = _nameController.text;
                       String _surname = _surnameController.text;
                       String _companyname = _companyNameController.text;

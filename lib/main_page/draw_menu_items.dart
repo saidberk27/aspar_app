@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'aboutUs.dart';
 import 'mygloves.dart';
 import 'contact.dart';
+import 'package:aspar_main/veritabani/sign_out.dart';
 
 class MenuItems extends StatelessWidget {
   const MenuItems({
@@ -11,7 +12,7 @@ class MenuItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           border: Border(
         right: BorderSide(width: 3.0, color: Color(0xFF166FC0)),
       )),
@@ -28,19 +29,19 @@ class MenuItems extends StatelessWidget {
           InkWell(
             onTap: () {
               debugPrint("Tapped");
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (glovesContext) => MyGloves()));
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (glovesContext) => const MyGloves()));
             },
             child: ListTile(
               leading: Image.asset(
                 "assets/images/gloves.png",
                 scale: 1.5,
               ),
-              title: Text(
+              title: const Text(
                 "Eldivenleriniz",
                 style: TextStyle(fontSize: 18),
               ),
-              trailing: Icon(
+              trailing: const Icon(
                 Icons.navigate_next_sharp,
                 color: Color(0xFF365059),
               ),
@@ -72,11 +73,11 @@ class MenuItems extends StatelessWidget {
                   "assets/images/info.png",
                   scale: 1.5,
                 ),
-                title: Text(
+                title: const Text(
                   "Hakkımızda",
                   style: TextStyle(fontSize: 18),
                 ),
-                trailing: Icon(
+                trailing: const Icon(
                   Icons.navigate_next_sharp,
                   color: Color(0xFF365059),
                 ),
@@ -89,11 +90,11 @@ class MenuItems extends StatelessWidget {
                 "assets/images/help.png",
                 scale: 1.5,
               ),
-              title: Text(
+              title: const Text(
                 "Yardım",
                 style: TextStyle(fontSize: 18),
               ),
-              trailing: Icon(
+              trailing: const Icon(
                 Icons.navigate_next_sharp,
                 color: Color(0xFF365059),
               ),
@@ -110,11 +111,11 @@ class MenuItems extends StatelessWidget {
                 "assets/images/contact.png",
                 scale: 1.5,
               ),
-              title: Text(
+              title: const Text(
                 "İletişim",
                 style: TextStyle(fontSize: 18),
               ),
-              trailing: Icon(
+              trailing: const Icon(
                 Icons.navigate_next_sharp,
                 color: Color(0xFF365059),
               ),
@@ -124,18 +125,18 @@ class MenuItems extends StatelessWidget {
           InkWell(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (contactContext) => const Contact()));
+                  builder: (contactContext) => const SignOut()));
             },
             child: ListTile(
               leading: Image.asset(
                 "assets/images/exit.png",
                 scale: 1.5,
               ),
-              title: Text(
+              title: const Text(
                 "Çıkış Yap",
                 style: TextStyle(fontSize: 18),
               ),
-              trailing: Icon(
+              trailing: const Icon(
                 Icons.navigate_next_sharp,
                 color: Color(0xFF365059),
               ),

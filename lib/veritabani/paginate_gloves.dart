@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:paginate_firestore/paginate_firestore.dart';
 import 'package:aspar_main/local_functions/expirationcalculator.dart';
-import 'package:aspar_main/local_functions/split_data.dart';
 
 class GloveDatabase extends StatefulWidget {
   AsyncSnapshot? snapshot;
@@ -30,7 +29,7 @@ class _GloveDatabaseState extends State<GloveDatabase> {
       itemBuilder: (context, documentSnapshots, index) {
         final data = documentSnapshots[index].data() as Map?;
         return Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               border: Border(
             top: BorderSide(width: 1.0, color: Color(0xFF0FA9EA)),
             bottom: BorderSide(width: 1.0, color: Color(0xFF0FA9EA)),
@@ -41,7 +40,7 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                 ? const Text('Error in data')
                 : Text(
                     documentSnapshots[index].id, //  ASP-Eİ YA DA ASP-EİS OLACAK
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
             leading: const Icon(
               Icons.arrow_drop_down_circle_outlined,
@@ -74,7 +73,7 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 32,
-                            color: const Color(0xFF0FA9EA)),
+                            color: Color(0xFF0FA9EA)),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -87,13 +86,13 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
-                                color: const Color(0xFF0FA9EA)),
+                                color: Color(0xFF0FA9EA)),
                           ),
                           Text(
                             "${data!['Seri No']}",
                             style: const TextStyle(
                               fontSize: 21,
-                              color: const Color(0xFF0FA9EA),
+                              color: Color(0xFF0FA9EA),
                             ),
                           )
                         ],
@@ -102,19 +101,19 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0, top: 16.0),
                       child: Row(
-                        children: [
-                          const Text(
+                        children: const [
+                          Text(
                             "Sınıf Numarası:    ",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
-                                color: const Color(0xFF0FA9EA)),
+                                color: Color(0xFF0FA9EA)),
                           ),
                           Text(
                             "CLASS 00",
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 21,
-                              color: const Color(0xFF0FA9EA),
+                              color: Color(0xFF0FA9EA),
                             ),
                           )
                         ],
@@ -129,17 +128,17 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 24,
-                              color: const Color(0xFF0FA9EA),
+                              color: Color(0xFF0FA9EA),
                             ),
                           ),
                           Text(
                             statusText,
                             style: const TextStyle(
                               fontSize: 21,
-                              color: const Color(0xFF0FA9EA),
+                              color: Color(0xFF0FA9EA),
                             ),
                           ),
-                          SizedBox(width: 10),
+                          const SizedBox(width: 10),
                           Icon(
                             Icons.circle,
                             color: statusCircleColor,
@@ -157,13 +156,13 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
-                                color: const Color(0xFF0FA9EA)),
+                                color: Color(0xFF0FA9EA)),
                           ),
                           Text(
                             _formatDate(data['Uygulamaya Eklenme Tarihi']),
                             style: const TextStyle(
                               fontSize: 21,
-                              color: const Color(0xFF0FA9EA),
+                              color: Color(0xFF0FA9EA),
                             ),
                           )
                         ],
@@ -178,13 +177,13 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
-                                color: const Color(0xFF0FA9EA)),
+                                color: Color(0xFF0FA9EA)),
                           ),
                           Text(
                             expirationDate,
                             style: const TextStyle(
                               fontSize: 21,
-                              color: const Color(0xFF0FA9EA),
+                              color: Color(0xFF0FA9EA),
                             ),
                           )
                         ],

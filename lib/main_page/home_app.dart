@@ -21,7 +21,7 @@ class _HomeAppState extends State<HomeApp> {
   @override
   void initState() {
     blogSayfa = const Blog();
-    gloveSayfa = MyGloves();
+    gloveSayfa = const MyGloves();
     homeSayfa = const HomePage();
     tumSayfalar = [blogSayfa, homeSayfa, gloveSayfa];
   }
@@ -31,11 +31,11 @@ class _HomeAppState extends State<HomeApp> {
     return Scaffold(
         appBar: AppBar(),
         drawer: const DrawerMenu(),
-        bottomNavigationBar: BottomNav(),
+        bottomNavigationBar: bottomNav(),
         body: tumSayfalar[simdikiIndex]);
   }
 
-  BottomNavigationBar BottomNav() {
+  BottomNavigationBar bottomNav() {
     return BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(

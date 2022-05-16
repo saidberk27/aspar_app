@@ -2,7 +2,7 @@ import 'package:aspar_main/veritabani/get_today_from_internet.dart';
 
 class SplitData {
   SplitData(this.qrCodeData) {
-    this.classifyQrCodeData();
+    classifyQrCodeData();
   }
   String? qrCodeData;
   String? gloveType;

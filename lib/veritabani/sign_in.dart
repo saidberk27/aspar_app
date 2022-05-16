@@ -12,7 +12,20 @@ class GirisYap extends StatefulWidget {
 
   void girisYap(BuildContext context) async {
     try {
+      Fluttertoast.showToast(
+          msg: "Giriş Yapılıyor, Lütfen Bekleyiniz...",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.grey,
+          textColor: Colors.white,
+          fontSize: 16.0);
       await _auth.signInWithEmailAndPassword(email: email, password: sifre);
+      Navigator.pushReplacement<void, void>(
+          context,
+          MaterialPageRoute<void>(
+            builder: (BuildContext context) => const HomeApp(),
+          ));
 
       Fluttertoast.showToast(
           msg: "Giriş Başarılı",
@@ -22,15 +35,11 @@ class GirisYap extends StatefulWidget {
           backgroundColor: Colors.green,
           textColor: Colors.white,
           fontSize: 16.0);
-      Navigator.pushReplacement<void, void>(
-        context,
-        MaterialPageRoute<void>(
-          builder: (BuildContext context) => const HomeApp(),
-        ),
-      );
     } catch (e) {
+      debugPrint(e.toString());
       Fluttertoast.showToast(
-          msg: "Giriş Başarısız Lütfen E-Posta ve Şİfrenizi Kontrol Ediniz",
+          msg:
+              "Giriş Başarısız Lütfen E-Posta ve Şİfrenizi Kontrol Ediniz,${e.toString()}",
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.CENTER,
           timeInSecForIosWeb: 2,
