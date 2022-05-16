@@ -107,6 +107,8 @@ class SignUp {
     try {
       debugPrint(email);
       debugPrint(password);
+      UserCredential userCredential = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: email!, password: password!);
       return true;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
