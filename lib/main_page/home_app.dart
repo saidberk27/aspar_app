@@ -17,6 +17,7 @@ class _HomeAppState extends State<HomeApp> {
   late Blog blogSayfa;
   late MyGloves gloveSayfa;
   late HomePage homeSayfa;
+  late final controller;
 
   @override
   void initState() {
@@ -24,6 +25,7 @@ class _HomeAppState extends State<HomeApp> {
     gloveSayfa = const MyGloves();
     homeSayfa = const HomePage();
     tumSayfalar = [blogSayfa, homeSayfa, gloveSayfa];
+    controller = PageController();
   }
 
   @override
@@ -32,7 +34,17 @@ class _HomeAppState extends State<HomeApp> {
         appBar: AppBar(),
         drawer: const DrawerMenu(),
         bottomNavigationBar: bottomNav(),
-        body: tumSayfalar[simdikiIndex]);
+        body: PageView(
+
+            /// [PageView.scrollDirection] defaults to [Axis.horizontal].
+            /// Use [Axis.vertical] to scroll vertically.
+            controller: controller,
+            children: <Widget>[blogSayfa, homeSayfa, gloveSayfa],
+            onPageChanged: (page) {
+              setState(() {
+                simdikiIndex = page;
+              });
+            }));
   }
 
   BottomNavigationBar bottomNav() {
@@ -63,6 +75,7 @@ class _HomeAppState extends State<HomeApp> {
       onTap: (index) {
         setState(() {
           simdikiIndex = index;
+          controller.jumpToPage(index);
         });
       },
       currentIndex: simdikiIndex,
