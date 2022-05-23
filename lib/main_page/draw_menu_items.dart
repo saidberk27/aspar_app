@@ -1,8 +1,10 @@
+import 'package:aspar_main/main_page/home_app.dart';
 import 'package:flutter/material.dart';
 import 'aboutUs.dart';
 import 'mygloves.dart';
 import 'contact.dart';
 import 'package:aspar_main/veritabani/sign_out.dart';
+import 'package:aspar_main/veritabani/sign_in.dart';
 
 class MenuItems extends StatelessWidget {
   const MenuItems({
@@ -29,8 +31,8 @@ class MenuItems extends StatelessWidget {
           InkWell(
             onTap: () {
               debugPrint("Tapped");
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (glovesContext) => const MyGloves()));
+              GirisYap.homeAppKey.currentState?.openPage(
+                  2); //   tumSayfalar = <Widget>[blogSayfa, homeSayfa, gloveSayfa]; baz alınarak index numarası gönderilmiştir.(home_app.dart)
             },
             child: ListTile(
               leading: Image.asset(
@@ -65,8 +67,7 @@ class MenuItems extends StatelessWidget {
           const Divider(thickness: 3, color: Color(0xFF166FC0)),
           InkWell(
               onTap: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (newsContext) => const Blog()));
+                GirisYap.homeAppKey.currentState?.openPage(0);
               },
               child: ListTile(
                 leading: Image.asset(

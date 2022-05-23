@@ -3,15 +3,16 @@ import 'mygloves.dart';
 import 'package:flutter/material.dart';
 import 'drawer_menu.dart';
 import 'home_page.dart';
+import 'package:aspar_main/veritabani/sign_in.dart';
 
 class HomeApp extends StatefulWidget {
-  const HomeApp({Key? key}) : super(key: key);
+  HomeApp({Key? key}) : super(key: key);
 
   @override
-  State<HomeApp> createState() => _HomeAppState();
+  State<HomeApp> createState() => HomeAppState();
 }
 
-class _HomeAppState extends State<HomeApp> {
+class HomeAppState extends State<HomeApp> {
   int simdikiIndex = 1;
   late List<Widget> tumSayfalar;
   late Blog blogSayfa;
@@ -24,7 +25,7 @@ class _HomeAppState extends State<HomeApp> {
     blogSayfa = const Blog();
     gloveSayfa = const MyGloves();
     homeSayfa = const HomePage();
-    tumSayfalar = [blogSayfa, homeSayfa, gloveSayfa];
+    tumSayfalar = <Widget>[blogSayfa, homeSayfa, gloveSayfa];
     controller = PageController();
   }
 
@@ -39,7 +40,7 @@ class _HomeAppState extends State<HomeApp> {
             /// [PageView.scrollDirection] defaults to [Axis.horizontal].
             /// Use [Axis.vertical] to scroll vertically.
             controller: controller,
-            children: <Widget>[blogSayfa, homeSayfa, gloveSayfa],
+            children: tumSayfalar,
             onPageChanged: (page) {
               setState(() {
                 simdikiIndex = page;
@@ -80,5 +81,10 @@ class _HomeAppState extends State<HomeApp> {
       },
       currentIndex: simdikiIndex,
     );
+  }
+
+  void openPage(int pageIndex) {
+    controller.jumpToPage(pageIndex);
+    Navigator.pop(context);
   }
 }

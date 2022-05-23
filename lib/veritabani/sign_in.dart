@@ -4,6 +4,8 @@ import 'package:aspar_main/main_page/home_app.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class GirisYap extends StatefulWidget {
+  static final GlobalKey<HomeAppState> homeAppKey = GlobalKey();
+
   late String email;
   late String sifre;
   static final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -24,7 +26,7 @@ class GirisYap extends StatefulWidget {
       Navigator.pushReplacement<void, void>(
           context,
           MaterialPageRoute<void>(
-            builder: (BuildContext context) => const HomeApp(),
+            builder: (BuildContext context) => HomeApp(key: homeAppKey),
           ));
 
       Fluttertoast.showToast(
