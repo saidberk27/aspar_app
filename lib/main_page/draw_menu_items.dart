@@ -104,8 +104,7 @@ class MenuItems extends StatelessWidget {
           const Divider(thickness: 3, color: Color(0xFF166FC0)),
           InkWell(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (contactContext) => const Contact()));
+              GirisYap.homeAppKey.currentState?.openPage(3);
             },
             child: ListTile(
               leading: Image.asset(

@@ -1,8 +1,11 @@
+//global key of home_app located in sign_in.dart
+
 import 'aboutUs.dart';
 import 'mygloves.dart';
 import 'package:flutter/material.dart';
 import 'drawer_menu.dart';
 import 'home_page.dart';
+import 'contact.dart';
 import 'package:aspar_main/veritabani/sign_in.dart';
 
 class HomeApp extends StatefulWidget {
@@ -18,6 +21,7 @@ class HomeAppState extends State<HomeApp> {
   late Blog blogSayfa;
   late MyGloves gloveSayfa;
   late HomePage homeSayfa;
+  late Contact contactSayfa;
   late final controller;
 
   @override
@@ -25,7 +29,8 @@ class HomeAppState extends State<HomeApp> {
     blogSayfa = const Blog();
     gloveSayfa = const MyGloves();
     homeSayfa = const HomePage();
-    tumSayfalar = <Widget>[blogSayfa, homeSayfa, gloveSayfa];
+    contactSayfa = const Contact();
+    tumSayfalar = <Widget>[blogSayfa, homeSayfa, gloveSayfa, contactSayfa];
     controller = PageController();
   }
 
@@ -79,7 +84,7 @@ class HomeAppState extends State<HomeApp> {
           controller.jumpToPage(index);
         });
       },
-      currentIndex: simdikiIndex,
+      currentIndex: simdikiIndex < 3 ? simdikiIndex : 1,
     );
   }
 

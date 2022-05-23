@@ -8,7 +8,6 @@ class Contact extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: Center(
         child: ListView(
           padding: const EdgeInsets.all(8),
