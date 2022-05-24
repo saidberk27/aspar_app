@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.aspar_main">
    <application
-        android:label="aspar_main"
-        android:icon="@mipmap/ic_launcher">
+        android:label="Aspar Enerji"
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

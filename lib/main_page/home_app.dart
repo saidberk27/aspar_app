@@ -30,7 +30,7 @@ class HomeAppState extends State<HomeApp> {
     gloveSayfa = const MyGloves();
     homeSayfa = const HomePage();
     contactSayfa = const Contact();
-    tumSayfalar = <Widget>[blogSayfa, homeSayfa, gloveSayfa, contactSayfa];
+    tumSayfalar = <Widget>[homeSayfa, blogSayfa, gloveSayfa, contactSayfa];
     controller = PageController();
   }
 
@@ -84,7 +84,9 @@ class HomeAppState extends State<HomeApp> {
           controller.jumpToPage(index);
         });
       },
-      currentIndex: simdikiIndex < 3 ? simdikiIndex : 1,
+      currentIndex: simdikiIndex < 3
+          ? simdikiIndex
+          : 1, // if it's more than 2,then raise error for  bottomnav because bottomnav just only have 3 sections.
     );
   }
 

@@ -11,7 +11,7 @@ class DrawerMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(
-        children: const [
+        children: [
           UserInformation(),
           MenuItems(),
         ],

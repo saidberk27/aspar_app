@@ -52,7 +52,9 @@ class MenuItems extends StatelessWidget {
           const Divider(thickness: 3, color: Color(0xFF0FA9EA)),
           InkWell(
               child: ListTile(
-            onTap: () {},
+            onTap: () {
+              GirisYap.homeAppKey.currentState?.openPage(1);
+            },
             leading: Image.asset(
               "assets/images/new.png",
               scale: 1.5,

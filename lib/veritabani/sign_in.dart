@@ -4,7 +4,7 @@ import 'package:aspar_main/main_page/home_app.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class GirisYap extends StatefulWidget {
-  GlobalKey<HomeAppState> homeAppKey = GlobalKey();
+  static GlobalKey<HomeAppState> homeAppKey = GlobalKey();
 
   late String email;
   late String sifre;
