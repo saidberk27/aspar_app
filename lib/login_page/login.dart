@@ -19,14 +19,14 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(child: OrientationBuilder(
+    return Container(child: OrientationBuilder(
       builder: (BuildContext context, Orientation orientation) {
         if (orientation == Orientation.portrait) {
           return Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Center(child: LogoArea()),
-              Flexible(
+              Expanded(
                 child: Container(
                   width: MediaQuery.of(context).size.width / 1.2,
                   height: MediaQuery.of(context).size.height / 2,
@@ -47,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
             ],
           );
         } else {
-          return Flexible(
+          return Expanded(
             child: Container(
               width: MediaQuery.of(context).size.width / 1.2,
               height: MediaQuery.of(context).size.height / 1.5,
