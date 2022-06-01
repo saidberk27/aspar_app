@@ -50,12 +50,28 @@ class UserInformation extends StatelessWidget {
         child: CircleAvatar(
           radius: 32,
           backgroundColor: Colors.white,
-          child: Text(
-            "AS",
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 40,
-                color: Color(0xFF166FC0)),
+          child: FutureBuilder(
+            future: UserData.getUserName,
+            builder: (BuildContext context, AsyncSnapshot snapshot) {
+              if (snapshot.hasData) {
+                String? username = snapshot.data;
+                return Text(
+                  "${username!.substring(0, 2)}",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 40,
+                      color: Color(0xFF166FC0)),
+                );
+              } else {
+                return Text(
+                  "..",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 40,
+                      color: Color(0xFF166FC0)),
+                );
+              }
+            },
           ),
         ),
       ),
