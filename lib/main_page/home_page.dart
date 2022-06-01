@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'post.dart';
+import 'home_app.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,7 +13,10 @@ class HomePage extends StatelessWidget {
         child: Text(
           "Duyurular & Haberler",
           textAlign: TextAlign.center,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 36),
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 36,
+              color: const Color(0xFF0FA9EA)),
         ),
       ),
       Post(
@@ -39,9 +43,6 @@ class HomePage extends StatelessWidget {
               "Türkiyenin Yerli Üretim İzole Eldiveni ASPAR ENERJİ olarak  Sizlere Sunmanın gururunu yaşamaktayız.",
           ImageURL:
               "https://asparenerji.com/wp-content/uploads/2018/09/yerli-uretim-izole-eldiven.jpg"),
-      const Divider(
-        thickness: 3,
-      ),
     ]);
   }
 }

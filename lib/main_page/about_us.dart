@@ -12,9 +12,12 @@ class Blog extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.only(bottom: 10.0),
           child: Text(
-            "About Us",
+            "Hakkımızda",
             textAlign: TextAlign.center,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 48),
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 48,
+                color: const Color(0xFF166FC0)),
           ),
         ),
         Container(

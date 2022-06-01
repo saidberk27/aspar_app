@@ -1,6 +1,6 @@
 //global key of home_app located in sign_in.dart
 
-import 'aboutUs.dart';
+import 'about_us.dart';
 import 'mygloves.dart';
 import 'package:flutter/material.dart';
 import 'drawer_menu.dart';
@@ -37,7 +37,13 @@ class HomeAppState extends State<HomeApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          foregroundColor: Colors.blue,
+          backgroundColor: Colors.white,
+          elevation: 0,
+          title: Text("Deneme"),
+          centerTitle: true,
+        ),
         drawer: const DrawerMenu(),
         bottomNavigationBar: bottomNav(),
         body: PageView(

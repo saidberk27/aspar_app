@@ -1,6 +1,6 @@
 import 'package:aspar_main/main_page/home_app.dart';
 import 'package:flutter/material.dart';
-import 'aboutUs.dart';
+import 'about_us.dart';
 import 'mygloves.dart';
 import 'contact.dart';
 import 'package:aspar_main/veritabani/sign_out.dart';

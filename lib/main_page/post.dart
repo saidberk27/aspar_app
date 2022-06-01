@@ -19,7 +19,10 @@ class Post extends StatelessWidget {
             child: Text(
           "${this.title}",
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: const Color(0xFF166FC0)),
         )),
         Container(
             decoration: BoxDecoration(

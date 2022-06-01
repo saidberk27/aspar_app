@@ -13,7 +13,7 @@ class Contact extends StatelessWidget {
           padding: const EdgeInsets.all(8),
           children: <Widget>[
             const Text(
-              "CONTACT INFO",
+              "İLETİŞİM BİLGİLERİ",
               style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
@@ -31,7 +31,7 @@ class Contact extends StatelessWidget {
                 color: Color(0xFF166FC0),
               ),
               title: const Text(
-                "Phone Number",
+                "Telefon Numarası",
                 style: TextStyle(fontSize: 24),
               ),
               subtitle: const Text(
@@ -55,7 +55,7 @@ class Contact extends StatelessWidget {
                 color: Color(0xFF166FC0),
               ),
               title: const Text(
-                "E-Mail",
+                "E-Posta",
                 style: TextStyle(fontSize: 24),
               ),
               subtitle: const Text(
@@ -79,7 +79,7 @@ class Contact extends StatelessWidget {
                 color: Color(0xFF166FC0),
               ),
               title: const Text(
-                "Adress",
+                "Adres",
                 style: TextStyle(fontSize: 24),
               ),
               subtitle: const Text(
@@ -103,11 +103,11 @@ class Contact extends StatelessWidget {
                 color: Color(0xFF166FC0),
               ),
               title: const Text(
-                "Working Hours",
+                "Çalışma Saatler",
                 style: TextStyle(fontSize: 24),
               ),
               subtitle: const Text(
-                "Everyday but Sunday, 9.00 - 18.00 (GMT+03:00)",
+                "Pazar Hariç Her Gün 9.00 - 18.00 (GMT+03:00)",
                 style: TextStyle(fontSize: 18),
               ),
               trailing: const Icon(
@@ -122,15 +122,19 @@ class Contact extends StatelessWidget {
               color: Color(0xFF0FA9EA),
             ),
             Container(
-              decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0xFF0FA9EA), width: 4),
-                  borderRadius: BorderRadius.circular(20)),
-              padding: const EdgeInsets.only(bottom: 12.0),
-              child: SizedBox(
-                width: 300,
-                child: Image.asset('assets/images/contact-us.jpg'),
-              ),
-            )
+                padding: const EdgeInsets.only(bottom: 12.0),
+                child: Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            width: 5, color: const Color(0xFF0FA9EA)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(10.0))),
+                    child: Image.asset(
+                      "assets/images/contact-us.jpg",
+                      height: MediaQuery.of(context).size.height / 3,
+                      width: MediaQuery.of(context).size.width,
+                      fit: BoxFit.cover,
+                    ))),
           ],
         ),
       ),

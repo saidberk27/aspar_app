@@ -35,6 +35,7 @@ class _AddNewGloveState extends State<AddNewGlove> {
     String demoData =
         "Safeline ASP-EI 4 TR012C4S11037S 10/05/2022 40kV www.asparenerji .com";
     return Scaffold(
+      appBar: AppBar(),
       body: Column(
         children: <Widget>[
           Expanded(flex: 4, child: _buildQrView(context)),

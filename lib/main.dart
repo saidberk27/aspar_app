@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: ThemeData(
-          primaryColor: const Color(0xFF0FA9EA),
-        ),
+            primaryColor: const Color(0xFF0FA9EA),
+            scaffoldBackgroundColor: Colors.white),
         title: 'Aspar',
         debugShowCheckedModeBanner: false,
         home: const Home());
