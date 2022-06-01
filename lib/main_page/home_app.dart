@@ -30,8 +30,8 @@ class HomeAppState extends State<HomeApp> {
     gloveSayfa = const MyGloves();
     homeSayfa = const HomePage();
     contactSayfa = const Contact();
-    tumSayfalar = <Widget>[homeSayfa, blogSayfa, gloveSayfa, contactSayfa];
-    controller = PageController();
+    tumSayfalar = <Widget>[blogSayfa, homeSayfa, gloveSayfa, contactSayfa];
+    controller = PageController(initialPage: 1);
   }
 
   @override

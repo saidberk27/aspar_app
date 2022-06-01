@@ -48,8 +48,8 @@ class InputAlanState extends State<InputAlan> {
               controller: _emailKontroller,
               autofocus: true,
               decoration: const InputDecoration(
-                  labelText: "E - Mail",
-                  hintText: "E-Mail",
+                  labelText: "E-Posta",
+                  hintText: "E-Posta",
                   prefixIcon: Icon(Icons.email_outlined),
                   suffixIcon: Icon(Icons.lock),
                   border: OutlineInputBorder(
@@ -63,8 +63,8 @@ class InputAlanState extends State<InputAlan> {
               controller: _sifreKontroller,
               obscureText: true,
               decoration: const InputDecoration(
-                  labelText: "Password",
-                  hintText: "Password",
+                  labelText: "Şifre",
+                  hintText: "Şifre",
                   prefixIcon: Icon(Icons.password_sharp),
                   suffixIcon: Icon(Icons.lock),
                   border: OutlineInputBorder(
