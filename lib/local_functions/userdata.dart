@@ -11,14 +11,15 @@ class UserData {
   }
 
   static Future<String?> get getUserName async {
+    String? username;
+    String? email = await UserData.getEmail;
     final docRef =
-        FirebaseFirestore.instance.collection("test").doc("$getEmail");
-    docRef.get().then(
-      (DocumentSnapshot doc) {
-        final data = doc.data() as Map<String, dynamic>;
-        print(data);
-      },
-      onError: (e) => print("Error getting document: $e"),
-    );
+        FirebaseFirestore.instance.collection("test").doc("${email}");
+
+    DocumentSnapshot doc = await docRef.get();
+
+    final data = doc.data() as Map<String, dynamic>;
+    username = data["E-Postanın Bağlı Olduğu Kişi"];
+    return username;
   }
 }

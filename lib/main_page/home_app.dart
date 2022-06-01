@@ -41,8 +41,16 @@ class HomeAppState extends State<HomeApp> {
           foregroundColor: Colors.blue,
           backgroundColor: Colors.white,
           elevation: 0,
-          title: Text("Deneme"),
           centerTitle: true,
+          actions: <Widget>[
+            IconButton(
+              icon: Image.asset("assets/images/applogo.png"),
+              tooltip: 'Open shopping cart',
+              onPressed: () {
+                // handle the press
+              },
+            ),
+          ],
         ),
         drawer: const DrawerMenu(),
         bottomNavigationBar: bottomNav(),

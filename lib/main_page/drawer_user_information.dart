@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:aspar_main/local_functions/userdata.dart';
 
 class UserInformation extends StatelessWidget {
   const UserInformation({
@@ -7,7 +8,7 @@ class UserInformation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const UserAccountsDrawerHeader(
+    return UserAccountsDrawerHeader(
       margin: EdgeInsets.zero,
       decoration: BoxDecoration(
           color: Colors.white,
@@ -17,19 +18,31 @@ class UserInformation extends StatelessWidget {
             right: BorderSide(width: 3.0, color: Color(0xFF166FC0)),
             bottom: BorderSide(width: 0),
           )),
-      accountName: Text(
-        "KULLANICI ADI",
-        style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Color(0xFF166FC0)),
+      accountName: FutureBuilder(
+        future: UserData.getUserName,
+        initialData: "Yükleniyor...",
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          return Text(
+            "${snapshot.data}",
+            style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF166FC0)),
+          );
+        },
       ),
-      accountEmail: Text(
-        "email@aspar.com",
-        style: TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.bold,
-            color: Color(0xFF0FA9EA)),
+      accountEmail: FutureBuilder(
+        future: UserData.getEmail,
+        initialData: "Yükleniyor...",
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          return Text(
+            "${snapshot.data}",
+            style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF0FA9EA)),
+          );
+        },
       ),
       currentAccountPicture: CircleAvatar(
         radius: 40,
