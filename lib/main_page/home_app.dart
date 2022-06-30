@@ -1,5 +1,7 @@
 //global key of home_app located in sign_in.dart
 
+import 'package:easy_localization/easy_localization.dart';
+
 import 'about_us.dart';
 import 'mygloves.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +18,7 @@ class HomeApp extends StatefulWidget {
 }
 
 class HomeAppState extends State<HomeApp> {
+  String selectedLanguage = "en";
   int simdikiIndex = 1;
   late List<Widget> tumSayfalar;
   late Blog blogSayfa;
@@ -42,14 +45,45 @@ class HomeAppState extends State<HomeApp> {
           backgroundColor: Colors.white,
           elevation: 0,
           centerTitle: true,
-          actions: <Widget>[
-            IconButton(
-              icon: Image.asset("assets/images/applogo.png"),
-              tooltip: 'Open shopping cart',
-              onPressed: () {
-                // handle the press
-              },
-            ),
+          actions: [
+            PopupMenuButton(
+                icon: Icon(Icons.language),
+                itemBuilder: (context) {
+                  return [
+                    PopupMenuItem<int>(
+                      value: 0,
+                      child: Row(children: [
+                        Image.asset("assets/images/langUK.png"),
+                        SizedBox(width: 10), // space
+                        Text(
+                          "English",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )
+                      ]),
+                    ),
+                    PopupMenuItem<int>(
+                      value: 1,
+                      child: Row(children: [
+                        Image.asset("assets/images/langTR.png"),
+                        SizedBox(width: 10), // space
+                        Text(
+                          "Türkçe",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )
+                      ]),
+                    ),
+                  ];
+                },
+                onSelected: (value) async {
+                  if (value == 0) {
+                    print("En");
+                    await context.setLocale(Locale('en', "US"));
+                  } else if (value == 1) {
+                    print("Tr");
+                    await context.setLocale(Locale('tr', "TR"));
+                  }
+                  setState(() {});
+                }),
           ],
         ),
         drawer: const DrawerMenu(),
