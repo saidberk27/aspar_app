@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:aspar_main/veritabani/sign_up.dart';
 import 'home_login.dart';
@@ -51,7 +52,7 @@ class _SignUpPageState extends State<SignUpPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text("ÜYE OL",
+              Text("sign up".tr(),
                   style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
@@ -62,9 +63,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   child: TextFormField(
                     controller: _nameController,
                     autofocus: true,
-                    decoration: const InputDecoration(
-                        labelText: "İsim",
-                        hintText: "İsim",
+                    decoration: InputDecoration(
+                        labelText: "name".tr(),
+                        hintText: "name".tr(),
                         prefixIcon: Icon(Icons.person),
                         suffixIcon: Icon(Icons.lock),
                         border: OutlineInputBorder(
@@ -79,9 +80,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   child: TextFormField(
                     controller: _surnameController,
                     autofocus: true,
-                    decoration: const InputDecoration(
-                        labelText: "Soyisim",
-                        hintText: "Soyisim",
+                    decoration: InputDecoration(
+                        labelText: "surname".tr(),
+                        hintText: "surname".tr(),
                         prefixIcon: Icon(Icons.person),
                         suffixIcon: Icon(Icons.lock),
                         border: OutlineInputBorder(
@@ -96,9 +97,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   child: TextFormField(
                     controller: _companyNameController,
                     autofocus: true,
-                    decoration: const InputDecoration(
-                        labelText: "Kurum İsmi (İsteğe Bağlı)",
-                        hintText: "Kuurm İsmi",
+                    decoration: InputDecoration(
+                        labelText: "company name".tr(),
+                        hintText: "company name".tr(),
                         prefixIcon: Icon(Icons.abc),
                         suffixIcon: Icon(Icons.lock),
                         border: OutlineInputBorder(
@@ -113,9 +114,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   child: TextFormField(
                     controller: _emailController,
                     autofocus: true,
-                    decoration: const InputDecoration(
-                        labelText: "E-Posta",
-                        hintText: "E-Posta",
+                    decoration: InputDecoration(
+                        labelText: "email".tr(),
+                        hintText: "email".tr(),
                         prefixIcon: Icon(Icons.email_outlined),
                         suffixIcon: Icon(Icons.lock),
                         border: OutlineInputBorder(
@@ -130,9 +131,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   child: TextFormField(
                     controller: _sifreController,
                     obscureText: true,
-                    decoration: const InputDecoration(
-                        labelText: "Parola",
-                        hintText: "Parola",
+                    decoration: InputDecoration(
+                        labelText: "password".tr(),
+                        hintText: "password".tr(),
                         prefixIcon: Icon(Icons.password_sharp),
                         suffixIcon: Icon(Icons.lock),
                         border: OutlineInputBorder(
@@ -166,7 +167,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (BuildContext context) => const Home()));
                     },
-                    child: const Text("Kayıt Ol"),
+                    child: Text("sign up".tr()),
                     style: OutlinedButton.styleFrom(
                         primary: const Color(0xFF166FC0),
                         side: const BorderSide(

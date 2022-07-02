@@ -66,8 +66,6 @@ class InputAlanState extends State<InputAlan> {
   Future<void> saveEmail() async {
     var sharedPreferences = await SharedPreferences.getInstance();
     sharedPreferences.setString("email", _emailKontroller.text);
-    print("EMAİL ------");
-    print(sharedPreferences.getString("email"));
   }
 
   @override
@@ -81,9 +79,9 @@ class InputAlanState extends State<InputAlan> {
             child: TextFormField(
               controller: _emailKontroller,
               autofocus: true,
-              decoration: const InputDecoration(
-                  labelText: "E-Posta",
-                  hintText: "E-Posta",
+              decoration: InputDecoration(
+                  labelText: "email".tr(),
+                  hintText: "email".tr(),
                   prefixIcon: Icon(Icons.email_outlined),
                   suffixIcon: Icon(Icons.lock),
                   border: OutlineInputBorder(
@@ -96,9 +94,9 @@ class InputAlanState extends State<InputAlan> {
             child: TextFormField(
               controller: _sifreKontroller,
               obscureText: true,
-              decoration: const InputDecoration(
-                  labelText: "Şifre",
-                  hintText: "Şifre",
+              decoration: InputDecoration(
+                  labelText: "password".tr(),
+                  hintText: "password".tr(),
                   prefixIcon: Icon(Icons.password_sharp),
                   suffixIcon: Icon(Icons.lock),
                   border: OutlineInputBorder(
@@ -117,7 +115,7 @@ class InputAlanState extends State<InputAlan> {
                     girisYap.girisYap(context);
                     saveEmail();
                   },
-                  child: const Text("GİRİŞ YAP"),
+                  child: Text("sign in".tr()),
                   style: OutlinedButton.styleFrom(
                       primary: const Color(0xFF166FC0),
                       side:
@@ -128,18 +126,17 @@ class InputAlanState extends State<InputAlan> {
                 CoolDropdown(
                   dropdownList: dropdownItemList,
                   onChange: (language) async {
-                    isUserInteractWithDropDown =
-                        true; // kullanici deger degistirirse haberimiz olsun.
+                    // kullanici deger degistirirse haberimiz olsun.
                     if (language["value"] == "tr") {
                       await context.setLocale(Locale("tr", "TR"));
                     } else if (language["value"] == "en") {
                       await context.setLocale(Locale("en", "US"));
                     }
                   },
-                  defaultValue: context.deviceLocale.toString() ==
+                  defaultValue: context.locale.toString() ==
                           "en_US" // Telefonun Dilini Cekiyor.
                       ? dropdownItemList[0]
-                      : context.deviceLocale.toString() == "tr_TR"
+                      : context.locale.toString() == "tr_TR"
                           ? dropdownItemList[1]
                           : dropdownItemList[0],
                   dropdownHeight: 120,
@@ -147,33 +144,25 @@ class InputAlanState extends State<InputAlan> {
               ],
             ),
           ),
-          const Flexible(
+          Flexible(
               child: Center(
             child: Text(
-              "Hesabın Yok Mu? Aspar Enerji'ye Kaydol!",
+              "don't you have an account?".tr(),
               style: TextStyle(
                 color: Color(0xFF0FA9EA),
                 fontWeight: FontWeight.bold,
-                fontSize: 15,
+                fontSize: 18,
               ),
+              textAlign: TextAlign.center,
             ),
           )),
           Flexible(
             child: OutlinedButton(
               onPressed: () async {
-                if (!isUserInteractWithDropDown) {
-                  if (context.deviceLocale.toString == "tr_TR") {
-                    // cihaz dili Turkceyse uygulamayı da Turkce yap.
-                    await context.setLocale(Locale("tr", "TR"));
-                  } else {
-                    await context.setLocale(Locale("en", "EN"));
-                  }
-                }
-
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) => const SignUpPage()));
               },
-              child: const Text("KAYIT OL"),
+              child: Text("sign up".tr()),
               style: OutlinedButton.styleFrom(
                   primary: const Color(0xFF166FC0),
                   side: const BorderSide(color: Color(0xFF0FA9EA), width: 2),

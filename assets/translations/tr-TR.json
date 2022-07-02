@@ -1,3 +1,13 @@
 {
-    "announcments":"Duyurular & Haberler"
+    "announcments":"Duyurular & Haberler",
+    "email":"E - Posta",
+    "password":"Şifre",
+    "sign in":"Giriş Yap",
+    "don't you have an account?":"Hesabın yok mu? Aspar Enerji Mobil Uygulamasına Kaydol!",
+    "sign up":"Kayıt Ol",
+
+    
+    "name":"İsim",
+    "surname":"Soy isim",
+    "company name":"Kurum Adı (İsteğe Bağlı)"
 }
