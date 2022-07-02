@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:aspar_main/local_functions/userdata.dart';
 import 'package:aspar_main/main_page/add_new_glove.dart';
@@ -27,9 +28,9 @@ class _MyGlovesState extends State<MyGloves> {
               body: ListView(
                 scrollDirection: Axis.vertical,
                 children: [
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.all(10.0),
-                    child: Text("Kayıtlı Eldivenler",
+                    child: Text("my gloves".tr(),
                         style: TextStyle(
                             fontSize: 48,
                             fontWeight: FontWeight.bold,
@@ -45,9 +46,9 @@ class _MyGlovesState extends State<MyGloves> {
                         builder: (newsContext) => const AddNewGlove()));
                   },
                   label: Row(
-                    children: const [
+                    children: [
                       Text(
-                        "Yeni Eldiven\t",
+                        "new gloves".tr(),
                         style: TextStyle(fontSize: 18),
                       ),
                       Icon(

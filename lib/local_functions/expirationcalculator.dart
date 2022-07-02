@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -56,11 +57,11 @@ class Expiration {
     int difference = expirationDateObj.difference(currentDateObj).inDays;
 
     if (difference <= 0) {
-      return "TEHLİKELİ";
+      return "dangerous".tr();
     } else if (difference > 0 && difference <= 90) {
-      return "TEST ETTİRİLMELİ";
+      return "should be tested soon".tr();
     } else {
-      return "GÜVENLİ";
+      return "safe".tr();
     }
   }
 }

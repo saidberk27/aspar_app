@@ -1,5 +1,6 @@
 // ignore_for_file: camel_case_types
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class Contact extends StatelessWidget {
@@ -10,10 +11,10 @@ class Contact extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: ListView(
-          padding: const EdgeInsets.all(8),
+          padding: EdgeInsets.all(8),
           children: <Widget>[
-            const Text(
-              "İLETİŞİM BİLGİLERİ",
+            Text(
+              "contact information".tr(),
               style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
@@ -30,12 +31,12 @@ class Contact extends StatelessWidget {
                 Icons.phone,
                 color: Color(0xFF166FC0),
               ),
-              title: const Text(
-                "Telefon Numarası",
+              title: Text(
+                "phone number".tr(),
                 style: TextStyle(fontSize: 24),
               ),
-              subtitle: const Text(
-                "+90 (0312) 577 32 62",
+              subtitle: Text(
+                "phone number value".tr(),
                 style: TextStyle(fontSize: 18),
               ),
               trailing: const Icon(
@@ -54,12 +55,12 @@ class Contact extends StatelessWidget {
                 Icons.mail,
                 color: Color(0xFF166FC0),
               ),
-              title: const Text(
-                "E-Posta",
+              title: Text(
+                "email".tr(),
                 style: TextStyle(fontSize: 24),
               ),
-              subtitle: const Text(
-                "info@asparenerji.com",
+              subtitle: Text(
+                "email value".tr(),
                 style: TextStyle(fontSize: 18),
               ),
               trailing: const Icon(
@@ -78,12 +79,12 @@ class Contact extends StatelessWidget {
                 Icons.location_pin,
                 color: Color(0xFF166FC0),
               ),
-              title: const Text(
-                "Adres",
+              title: Text(
+                "adress".tr(),
                 style: TextStyle(fontSize: 24),
               ),
-              subtitle: const Text(
-                "Saray, 40. Cd No:6, 06980 Kahramankazan/Ankara",
+              subtitle: Text(
+                "adress value".tr(),
                 style: TextStyle(fontSize: 18),
               ),
               trailing: const Icon(
@@ -102,12 +103,12 @@ class Contact extends StatelessWidget {
                 Icons.access_time_filled,
                 color: Color(0xFF166FC0),
               ),
-              title: const Text(
-                "Çalışma Saatler",
+              title: Text(
+                "working hours".tr(),
                 style: TextStyle(fontSize: 24),
               ),
-              subtitle: const Text(
-                "Pazar Hariç Her Gün 9.00 - 18.00 (GMT+03:00)",
+              subtitle: Text(
+                "working hours value".tr(),
                 style: TextStyle(fontSize: 18),
               ),
               trailing: const Icon(

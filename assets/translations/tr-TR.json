@@ -9,5 +9,48 @@
     
     "name":"İsim",
     "surname":"Soy isim",
-    "company name":"Kurum Adı (İsteğe Bağlı)"
+    "company name":"Kurum Adı (İsteğe Bağlı)",
+
+    "about us":"HAKKIMIZDA",
+    "home":"ANA SAYFA",
+    "my gloves":"ELDİVENLERİM",
+    "what's new":"ASPAR ENERJİDE YENİ NE VAR?",
+    "help":"YARDIM",
+    "contact":"İLETİŞİM",
+    "log out":"ÇIKIŞ YAP",
+
+    "our renewed website":"Yenilenen Web Sitemiz Yayında",
+    "our renewed website text":"   Yeni Tasarlanan Web Sitemiz Yayına Girmiştir.Türkiye’nin İlk ve Tek İzole Eldiven üretimi yapan Firmamızın web sitesine ziyaret ettiğiniz için teşekkür ederiz.",
+
+    
+    "germany fair event":"Almanya Fuar Etkinliğimiz",
+    "germany fair event text":"    26-29 EKİM 2021  tarihleri arasında Almanya Düseldorf’da  düzenlenen A+A İŞ GÜVENLİĞİ  fuarında standımızı ziyaret ederek firmamıza ve ürünlerimize göstermiş olduğunuz ilgi için teşekkür ederiz. SAFELINE Dielectric Gloves ekibi olarak yeni tanıştığımız ve var olan müşterilerimizle iş birliğimizi artırma ve güçlendirme şansını yakaladığımız için çok mutluyuz.",
+
+    "turkey’s first domestic production insulation gloves":"Türkiyenin İlk Yerli Üretim İzole Eldiveni",
+    "turkey’s first domestic production insulation gloves text":"Türkiyenin Yerli Üretim İzole Eldiveni ASPAR ENERJİ olarak  Sizlere Sunmanın gururunu yaşamaktayız.",
+
+    "about us text":"\t\tAspar Enerji ve İş Güvenliği firması , alanında uzman mühendisler ve profesyonellerce enerjide iş güvenliği ürünlerinin ileri teknoloji ile tamamen yerli imkanlarla üretilebilmesi amacıyla 2019 yılının başında kurulmuştur.\n\n\t\tKuruluşundan itibaren elektriksel yalıtımlı eldiven üretimi başta olmak üzere üretim grubuna dahil ettiği pek çok ürün için uzun süren arge faaliyetleri yürütmüştür. Firmamız halihazırda ürettiği ürünleri için arge çalışmalarını Ankara Kahramankazan’da kurduğu pilot tesiste yaklaşık 3 senede tamamlamıştır.\n\n\t\t Araştırma faaliyetleri için firmamız bünyesinde elektriksel testlerin yürütüldüğü bir test laboratuvarı , kimyasal analizlerin ve proseslerin kontrol edildiği bir kimya-malzeme laboratuvarının yanı sıra girdi kontrolleri ve nihai ürünlerin kalite kontrollerinin yapıldığı bir kalite kontrol laboratuvarı bulunmaktadır.\n\n\t\tTürkiye’de yerli imkanlarımızla üretim aşamasından kalite aşamasına  kadar uluslararası ve ulusal standartlara uyan , standartları geliştiren ve yüksek teknolojiyi her aşamada uygulayan bir firma olarak var gücümüzle çalışmaya devam edeceğiz.",
+
+    "new gloves":"Yeni Eldiven\t",
+
+    "safeline rubber dielectric gloves":"Safeline Elektriksel Yalıtımlı Kauçuk Eldiven",
+    "serial number": "Seri Numarası:\t\t",
+    "class number":"Sınıf Numarası:\t\t",
+    "situation":"Situation\t\t",
+    "date of add":"Eklenme Tarihi:\t\t",
+    "date of next test":"Sonraki Test Tarihi",
+    "dangerous":"Kullanılması Tehlikeli!",
+    "should be tested soon":"Yakın Zamanda Test Ettirilmeli.",
+    "safe":"Güvenli.",
+
+
+    "contact information":"İLETİŞİM BİLGİLERİ",
+    "phone number":"Telefon Numarası",
+    "phone number value":"+90 (0312) 577 32 62",
+    "email value":"info@asparenerji.com",
+    "adress":"Adres",
+    "adress value":"Saray, 40. Cd No:6, 06980 Kahramankazan/Ankara",
+    "working hours":"Çalışma Saatleri",
+    "working hours value":"Pazar Hariç Her Gün 9.00 - 18.00 (GMT+03:00)"
+
 }

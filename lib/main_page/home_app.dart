@@ -109,21 +109,21 @@ class HomeAppState extends State<HomeApp> {
             "assets/images/info.png",
             scale: 2,
           ),
-          label: "HAKKIMIZDA",
+          label: "about us".tr(),
         ),
         BottomNavigationBarItem(
           icon: Image.asset(
             "assets/images/home.png",
             scale: 2,
           ),
-          label: "ANA SAYFA",
+          label: "home".tr(),
         ),
         BottomNavigationBarItem(
           icon: Image.asset(
             "assets/images/gloves.png",
             scale: 2,
           ),
-          label: "ELDİVENLERİM",
+          label: "my gloves".tr(),
         ),
       ],
       onTap: (index) {

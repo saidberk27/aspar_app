@@ -1,4 +1,5 @@
 import 'package:aspar_main/main_page/home_app.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'about_us.dart';
 import 'mygloves.dart';
@@ -39,8 +40,8 @@ class MenuItems extends StatelessWidget {
                 "assets/images/gloves.png",
                 scale: 1.5,
               ),
-              title: const Text(
-                "Eldivenleriniz",
+              title: Text(
+                "my gloves".tr(),
                 style: TextStyle(fontSize: 18),
               ),
               trailing: const Icon(
@@ -59,8 +60,7 @@ class MenuItems extends StatelessWidget {
               "assets/images/new.png",
               scale: 1.5,
             ),
-            title: const Text("Aspar Enerji'de Yeni Ne Var?",
-                style: TextStyle(fontSize: 18)),
+            title: Text("what's new".tr(), style: TextStyle(fontSize: 18)),
             trailing: const Icon(
               Icons.navigate_next_sharp,
               color: Color(0xFF365059),
@@ -76,8 +76,8 @@ class MenuItems extends StatelessWidget {
                   "assets/images/info.png",
                   scale: 1.5,
                 ),
-                title: const Text(
-                  "Hakkımızda",
+                title: Text(
+                  "about us".tr(),
                   style: TextStyle(fontSize: 18),
                 ),
                 trailing: const Icon(
@@ -93,8 +93,8 @@ class MenuItems extends StatelessWidget {
                 "assets/images/help.png",
                 scale: 1.5,
               ),
-              title: const Text(
-                "Yardım",
+              title: Text(
+                "help".tr(),
                 style: TextStyle(fontSize: 18),
               ),
               trailing: const Icon(
@@ -113,8 +113,8 @@ class MenuItems extends StatelessWidget {
                 "assets/images/contact.png",
                 scale: 1.5,
               ),
-              title: const Text(
-                "İletişim",
+              title: Text(
+                "contact".tr(),
                 style: TextStyle(fontSize: 18),
               ),
               trailing: const Icon(
@@ -134,8 +134,8 @@ class MenuItems extends StatelessWidget {
                 "assets/images/exit.png",
                 scale: 1.5,
               ),
-              title: const Text(
-                "Çıkış Yap",
+              title: Text(
+                "log out".tr(),
                 style: TextStyle(fontSize: 18),
               ),
               trailing: const Icon(

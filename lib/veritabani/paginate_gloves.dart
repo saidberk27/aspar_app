@@ -1,5 +1,6 @@
 //scroll controllerin nasıl kullanıldığı ile ilgili yazi: https://stackoverflow.com/questions/52403782/how-to-scroll-list-view-builder-of-expansion-tile-auto-scroll-to-the-end-of-list
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:paginate_firestore/paginate_firestore.dart';
@@ -26,7 +27,6 @@ class _GloveDatabaseState extends State<GloveDatabase> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _scrollController = ScrollController();
   }
@@ -82,10 +82,10 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                 color: Colors.white,
                 child: Column(
                   children: [
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.all(18.0),
                       child: Text(
-                        "Safeline Elektriksel Yalıtımlı Kauçuk Eldiven",
+                        "safeline rubber dielectric gloves".tr(),
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 32,
@@ -94,11 +94,11 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 8.0, top: 16.0),
+                      padding: EdgeInsets.only(left: 8.0, top: 16.0),
                       child: Row(
                         children: [
-                          const Text(
-                            "Seri Numarası:    ",
+                          Text(
+                            "serial number".tr(),
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
@@ -118,8 +118,8 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                       padding: const EdgeInsets.only(left: 8.0, top: 16.0),
                       child: Row(
                         children: [
-                          const Text(
-                            "Sınıf Numarası:    ",
+                          Text(
+                            "class number".tr(),
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
@@ -139,8 +139,8 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                       padding: const EdgeInsets.only(left: 8.0, top: 16.0),
                       child: Row(
                         children: [
-                          const Text(
-                            "Durum:   ",
+                          Text(
+                            "situation".tr(),
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 24,
@@ -167,8 +167,8 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                       padding: const EdgeInsets.only(left: 8.0, top: 16.0),
                       child: Row(
                         children: [
-                          const Text(
-                            "Eklenme Tarihi:    ",
+                          Text(
+                            "date of add".tr(),
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
@@ -185,11 +185,11 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 8.0, top: 16.0),
+                      padding: EdgeInsets.only(left: 8.0, top: 16.0),
                       child: Row(
                         children: [
-                          const Text(
-                            "Son Test Tarihi:    ",
+                          Text(
+                            "date of next test".tr(),
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,

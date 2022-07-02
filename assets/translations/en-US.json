@@ -8,5 +8,46 @@
 
     "name":"Name",
     "surname":"Surname",
-    "company name":"Company Name (Optional)"
+    "company name":"Company Name (Optional)",
+
+    "about us":"ABOUT US",
+    "home":"HOME",
+    "my gloves":"MY GLOVES",
+    "what's new":"WHAT'S NEW?",
+    "help":"HELP",
+    "contact":"CONTACT",
+    "log out":"LOG OUT",
+
+    "our renewed website":"Our Renewed Website",    
+    "our renewed website text":"   Our Newly Designed Web Site Has Been Launched. Thank you for visiting the website of our company, which produces Turkey’s First and Only Isolated Gloves.",
+
+    "germany fair event":"Germany Fair Event",
+    "germany fair event text":"    Thank you for your interest in our company and our products by visiting our stand at the A+A Occupational Safety Fair held in Düsseldorf, Germany, between 26-29 OCTOBER 2021. As the SAFELINE Dielectric Gloves team, we are very happy to have the chance to meet and strengthen our cooperation with our existing customers.",
+
+    "turkey’s first domestic production insulation gloves":"Turkey’s First Domestic Production Insulation Gloves",
+    "turkey’s first domestic production insulation gloves text":"As ASPAR ENERJİ, Turkey’s Domestic Production Insulation Gloves, we are proud to present it to you.",
+    
+    "about us text":"\t\tAspar Energy and Occupational Safety Firm will be launched in 2019, which will be built with the technology that will do business in energy by expert engineers and professionals in the region.\n\n\t\tSince its establishment, it has carried out long-term R&D activities for many products that it has included in its production group, especially the production of electrically insulated gloves.\n\n\t\tOur company has completed its R&D studies for the products it currently produces in the pilot facility it has established in Ankara Kahramankazan in about 3 years.\n\n\t\tFor research activities, our company has a test laboratory where electrical tests are carried out, a chemistry-materials laboratory where chemical analyzes and processes are controlled, as well as a quality control laboratory where input controls and quality controls of final products are made.\n\n\t\tWe will continue to work with all our strength as a company that complies with international and national standards, develops standards and applies high technology at every stage, from the production stage to the quality stage, with our domestic resources in Turkey.",
+
+    "new gloves":"New Gloves\t",
+
+    "safeline rubber dielectric gloves":"Safeline Rubber Dielectric Gloves",
+    "serial number": "Serial Number:\t\t",
+    "class number": "Class Number:\t\t",
+    "situation":"Situation:\t\t",
+    "date of add":"Date of Add:\t\t",
+    "date of next test":"Date of Next Test:\t\t",
+    "dangerous":"Dangerous to Use!",
+    "should be tested soon":"Should Be Tested Soon.",
+    "safe":"Safe to Use.",
+
+    "contact information":"CONTACT INFORMATION",
+    "phone number":"Phone Number",
+    "phone number value":"+90 (0312) 577 32 62",
+    "email value":"info@asparenerji.com",
+    "adress":"Adress",
+    "adress value":"Saray, 40. Cd No:6, 06980 Kahramankazan/Ankara",
+    "working hours":"Working Hours",
+    "working hours value":"Everyday but Sunday 9.00 - 18.00 (GMT+03:00)"
+
 }

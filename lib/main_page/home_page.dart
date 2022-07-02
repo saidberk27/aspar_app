@@ -20,27 +20,25 @@ class HomePage extends StatelessWidget {
         ),
       ),
       Post(
-          title: "Yenilenen Web Sitemiz Yayında",
-          content:
-              "   Yeni Tasarlanan Web Sitemiz Yayına Girmiştir.Türkiye’nin İlk ve Tek İzole Eldiven üretimi yapan Firmamızın web sitesine ziyaret ettiğiniz için teşekkür ederiz.",
+          title: "our renewed website".tr(),
+          content: "our renewed website text".tr(),
           ImageURL:
               "https://asparenerji.com/wp-content/uploads/2018/09/yenilenen-web-sitemiz-yayinda.jpg"),
       const Divider(
         thickness: 3,
       ),
       Post(
-          title: "Almanya Fuar Etkinliğimiz",
-          content:
-              "     26-29 EKİM 2021  tarihleri arasında Almanya Düseldorf’da  düzenlenen A+A İŞ GÜVENLİĞİ  fuarında standımızı ziyaret ederek firmamıza ve ürünlerimize göstermiş olduğunuz ilgi için teşekkür ederiz. SAFELINE Dielectric Gloves ekibi olarak yeni tanıştığımız ve var olan müşterilerimizle iş birliğimizi artırma ve güçlendirme şansını yakaladığımız için çok mutluyuz.",
+          title: "germany fair event".tr(),
+          content: "germany fair event text".tr(),
           ImageURL:
               "https://asparenerji.com/wp-content/uploads/2018/09/almanya-fuar-etkinligimiz-768x1024.jpg"),
       const Divider(
         thickness: 3,
       ),
       Post(
-          title: "Türkiyenin İlk Yerli Üretim İzole Eldiveni",
+          title: "turkey’s first domestic production insulation gloves".tr(),
           content:
-              "Türkiyenin Yerli Üretim İzole Eldiveni ASPAR ENERJİ olarak  Sizlere Sunmanın gururunu yaşamaktayız.",
+              "turkey’s first domestic production insulation gloves text".tr(),
           ImageURL:
               "https://asparenerji.com/wp-content/uploads/2018/09/yerli-uretim-izole-eldiven.jpg"),
     ]);
