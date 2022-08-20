@@ -1,11 +1,12 @@
 //scroll controllerin nasıl kullanıldığı ile ilgili yazi: https://stackoverflow.com/questions/52403782/how-to-scroll-list-view-builder-of-expansion-tile-auto-scroll-to-the-end-of-list
 
+// ignore_for_file: must_be_immutable
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:paginate_firestore/paginate_firestore.dart';
 import 'package:aspar_main/local_functions/expirationcalculator.dart';
-import 'package:aspar_main/local_functions/split_data.dart';
 import 'package:aspar_main/colors.dart';
 
 class GloveDatabase extends StatefulWidget {
@@ -229,6 +230,7 @@ class _GloveDatabaseState extends State<GloveDatabase> {
     // date = 2022-05-10 13:12:19.038
     List splittedDate =
         date.split(" ")[0].split("-"); // splittedDate = [2022,05,10]
+    debugPrint("HATA BURADA $splittedDate");
     String formattedDate =
         "${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}"; //formattedDate = 10/05/2022
 

@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:aspar_main/local_functions/userdata.dart';
-import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:aspar_main/colors.dart';
 import 'package:aspar_main/local_functions/warn_user.dart';
 
@@ -63,7 +61,8 @@ class SaveGlove {
         );
 
     Warnings(
-        message: "Eldiveniniz Başarıyla Kaydedildi",
-        warningColor: ProjectColors.succesColor);
+            message: "Eldiveniniz Başarıyla Kaydedildi",
+            warningColor: ProjectColors.succesColor)
+        .toastWarning();
   }
 }
