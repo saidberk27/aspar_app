@@ -4,6 +4,8 @@ import 'package:aspar_main/local_functions/userdata.dart';
 import 'package:aspar_main/main_page/add_new_glove.dart';
 import 'package:aspar_main/veritabani/paginate_gloves.dart';
 
+import '../colors.dart';
+
 class MyGloves extends StatefulWidget {
   const MyGloves({Key? key}) : super(key: key);
 
@@ -34,7 +36,7 @@ class _MyGlovesState extends State<MyGloves> {
                         style: TextStyle(
                             fontSize: 48,
                             fontWeight: FontWeight.bold,
-                            color: Color(0xFF0FA9EA)),
+                            color: ProjectColors.lightBlue),
                         textAlign: TextAlign.center),
                   ),
                   GloveDatabase(snapshot),

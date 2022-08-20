@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:aspar_main/local_functions/userdata.dart';
+import 'package:aspar_main/colors.dart';
 
 class UserInformation extends StatelessWidget {
   const UserInformation({
@@ -13,9 +14,9 @@ class UserInformation extends StatelessWidget {
       decoration: BoxDecoration(
           color: Colors.white,
           border: Border(
-            top: BorderSide(width: 3.0, color: Color(0xFF166FC0)),
-            left: BorderSide(width: 3.0, color: Color(0xFF166FC0)),
-            right: BorderSide(width: 3.0, color: Color(0xFF166FC0)),
+            top: BorderSide(width: 3.0, color: ProjectColors.darkBlue),
+            left: BorderSide(width: 3.0, color: ProjectColors.darkBlue),
+            right: BorderSide(width: 3.0, color: ProjectColors.darkBlue),
             bottom: BorderSide(width: 0),
           )),
       accountName: FutureBuilder(
@@ -27,7 +28,7 @@ class UserInformation extends StatelessWidget {
             style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF166FC0)),
+                color: ProjectColors.darkBlue),
           );
         },
       ),
@@ -40,13 +41,13 @@ class UserInformation extends StatelessWidget {
             style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF0FA9EA)),
+                color: ProjectColors.lightBlue),
           );
         },
       ),
       currentAccountPicture: CircleAvatar(
         radius: 40,
-        backgroundColor: Color(0xFF0FA9EA),
+        backgroundColor: ProjectColors.lightBlue,
         child: CircleAvatar(
           radius: 32,
           backgroundColor: Colors.white,
@@ -60,7 +61,7 @@ class UserInformation extends StatelessWidget {
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 40,
-                      color: Color(0xFF166FC0)),
+                      color: ProjectColors.darkBlue),
                 );
               } else {
                 return Text(
@@ -68,7 +69,7 @@ class UserInformation extends StatelessWidget {
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 40,
-                      color: Color(0xFF166FC0)),
+                      color: ProjectColors.darkBlue),
                 );
               }
             },

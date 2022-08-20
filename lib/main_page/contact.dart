@@ -2,6 +2,7 @@
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:aspar_main/colors.dart';
 
 class Contact extends StatelessWidget {
   const Contact({Key? key}) : super(key: key);
@@ -18,18 +19,18 @@ class Contact extends StatelessWidget {
               style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF0FA9EA)),
+                  color: ProjectColors.lightBlue),
               textAlign: TextAlign.center,
             ),
             const Divider(
               height: 20,
               thickness: 4,
-              color: Color(0xFF0FA9EA),
+              color: ProjectColors.lightBlue,
             ),
             ListTile(
               leading: const Icon(
                 Icons.phone,
-                color: Color(0xFF166FC0),
+                color: ProjectColors.darkBlue,
               ),
               title: Text(
                 "phone number".tr(),
@@ -41,19 +42,19 @@ class Contact extends StatelessWidget {
               ),
               trailing: const Icon(
                 Icons.arrow_right_outlined,
-                color: Color(0xFF0FA9EA),
+                color: ProjectColors.lightBlue,
               ),
               onTap: () {},
             ),
             const Divider(
               height: 20,
               thickness: 4,
-              color: Color(0xFF0FA9EA),
+              color: ProjectColors.lightBlue,
             ),
             ListTile(
               leading: const Icon(
                 Icons.mail,
-                color: Color(0xFF166FC0),
+                color: ProjectColors.darkBlue,
               ),
               title: Text(
                 "email".tr(),
@@ -65,19 +66,19 @@ class Contact extends StatelessWidget {
               ),
               trailing: const Icon(
                 Icons.arrow_right_outlined,
-                color: Color(0xFF0FA9EA),
+                color: ProjectColors.lightBlue,
               ),
               onTap: () {},
             ),
             const Divider(
               height: 20,
               thickness: 4,
-              color: Color(0xFF0FA9EA),
+              color: ProjectColors.lightBlue,
             ),
             ListTile(
               leading: const Icon(
                 Icons.location_pin,
-                color: Color(0xFF166FC0),
+                color: ProjectColors.darkBlue,
               ),
               title: Text(
                 "adress".tr(),
@@ -89,19 +90,19 @@ class Contact extends StatelessWidget {
               ),
               trailing: const Icon(
                 Icons.arrow_right_outlined,
-                color: Color(0xFF0FA9EA),
+                color: ProjectColors.lightBlue,
               ),
               onTap: () {},
             ),
             const Divider(
               height: 20,
               thickness: 4,
-              color: Color(0xFF0FA9EA),
+              color: ProjectColors.lightBlue,
             ),
             ListTile(
               leading: const Icon(
                 Icons.access_time_filled,
-                color: Color(0xFF166FC0),
+                color: ProjectColors.darkBlue,
               ),
               title: Text(
                 "working hours".tr(),
@@ -113,21 +114,21 @@ class Contact extends StatelessWidget {
               ),
               trailing: const Icon(
                 Icons.arrow_right_outlined,
-                color: Color(0xFF0FA9EA),
+                color: ProjectColors.lightBlue,
               ),
               onTap: () {},
             ),
             const Divider(
               height: 20,
               thickness: 4,
-              color: Color(0xFF0FA9EA),
+              color: ProjectColors.lightBlue,
             ),
             Container(
                 padding: const EdgeInsets.only(bottom: 12.0),
                 child: Container(
                     decoration: BoxDecoration(
                         border: Border.all(
-                            width: 5, color: const Color(0xFF0FA9EA)),
+                            width: 5, color: ProjectColors.lightBlue),
                         borderRadius:
                             const BorderRadius.all(Radius.circular(10.0))),
                     child: Image.asset(

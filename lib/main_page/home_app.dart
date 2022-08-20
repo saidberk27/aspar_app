@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'drawer_menu.dart';
 import 'home_page.dart';
 import 'contact.dart';
-import 'package:aspar_main/veritabani/sign_in.dart';
 
 class HomeApp extends StatefulWidget {
   HomeApp({Key? key}) : super(key: key);
@@ -53,10 +52,10 @@ class HomeAppState extends State<HomeApp> {
                     PopupMenuItem<int>(
                       value: 0,
                       child: Row(children: [
-                        Image.asset("assets/images/langUK.png"),
+                        Image.asset("assets/images/ig.png"),
                         SizedBox(width: 10), // space
                         Text(
-                          "English",
+                          "Instagram",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         )
                       ]),
@@ -64,12 +63,34 @@ class HomeAppState extends State<HomeApp> {
                     PopupMenuItem<int>(
                       value: 1,
                       child: Row(children: [
-                        Image.asset("assets/images/langTR.png"),
+                        Image.asset("assets/images/linkedin.png"),
                         SizedBox(width: 10), // space
                         Text(
-                          "Türkçe",
+                          "LinkedIn",
                           style: TextStyle(fontWeight: FontWeight.bold),
-                        )
+                        ),
+                      ]),
+                    ),
+                    PopupMenuItem<int>(
+                      value: 2,
+                      child: Row(children: [
+                        Image.asset("assets/images/www.png"),
+                        SizedBox(width: 10), // space
+                        Text(
+                          "Web Site",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ]),
+                    ),
+                    PopupMenuItem<int>(
+                      value: 1,
+                      child: Row(children: [
+                        Image.asset("assets/images/star.png"),
+                        SizedBox(width: 10), // space
+                        Text(
+                          "Rate Us",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                       ]),
                     ),
                   ];

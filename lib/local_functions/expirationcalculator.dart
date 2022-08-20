@@ -1,3 +1,4 @@
+import 'package:aspar_main/colors.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -44,11 +45,11 @@ class Expiration {
     DateTime currentDateObj = DateTime.now();
     int difference = expirationDateObj.difference(currentDateObj).inDays;
     if (difference <= 0) {
-      return Colors.red;
+      return ProjectColors.failColor;
     } else if (difference > 0 && difference <= 90) {
-      return Colors.yellow;
+      return ProjectColors.yellow;
     } else {
-      return Colors.green;
+      return ProjectColors.succesColor;
     }
   }
 

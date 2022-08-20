@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:aspar_main/colors.dart';
+import 'package:aspar_main/local_functions/warn_user.dart';
 
 class SignUp {
   FirebaseAuth auth = FirebaseAuth.instance;
@@ -42,17 +44,6 @@ class SignUp {
     };
   }
 
-  void showToast(String message, MaterialColor color) {
-    Fluttertoast.showToast(
-        msg: message,
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-        timeInSecForIosWeb: 1,
-        backgroundColor: color,
-        textColor: Colors.white,
-        fontSize: 16.0);
-  }
-
   Future<void> createFireStoreUserData() {
     String fullName = "$name $surname"; // İnsan Okuması İçin Human Readable
     CollectionReference users = FirebaseFirestore.instance.collection('users');
@@ -61,8 +52,10 @@ class SignUp {
       'soyisim': surname, // Stokes and Sons
       'eposta': email, // 42
       'şirket ismi': companyName,
-    }).then((value) =>
-        showToast("Üye Olma Başarılı Lütfen Giriş Yapınız", Colors.green));
+    }).then((value) => Warnings(
+            message: "Üye Olma Başarılı Lütfen Giriş Yapınız",
+            warningColor: ProjectColors.succesColor)
+        .toastWarning());
   }
 
   Future<void> createFireStoreGloveBase() {
@@ -89,7 +82,8 @@ class SignUp {
         return true;
       }
     } catch (e) {
-      showToast(e.toString(), Colors.red);
+      Warnings(message: e.toString(), warningColor: ProjectColors.failColor)
+          .toastWarning();
       return false;
     }
   }
@@ -112,11 +106,20 @@ class SignUp {
       return true;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        showToast("Şifreniz Çok Zayıf!", Colors.red);
+        Warnings(
+                message: "Şifreniz Çok Zayıf!",
+                warningColor: ProjectColors.failColor)
+            .toastWarning();
       } else if (e.code == 'email-already-in-use') {
-        showToast("Bu Eposta Hesabıyla Kayıt Zaten Mevcut!", Colors.red);
+        Warnings(
+                message: "Bu Eposta Hesabıyla Kayıt Zaten Mevcut!",
+                warningColor: ProjectColors.failColor)
+            .toastWarning();
       } else if (e.code == 'invalid-email') {
-        showToast("Eposta Adresi Geçersiz!", Colors.red);
+        Warnings(
+                message: "Eposta Adresi Geçersiz!",
+                warningColor: ProjectColors.failColor)
+            .toastWarning();
       }
       return false;
     }

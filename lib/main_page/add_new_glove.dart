@@ -7,6 +7,8 @@ import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:aspar_main/local_functions/split_data.dart';
 import 'package:aspar_main/veritabani/save_glove.dart';
 
+import 'package:aspar_main/colors.dart';
+
 class AddNewGlove extends StatefulWidget {
   const AddNewGlove({Key? key}) : super(key: key);
 
@@ -32,8 +34,7 @@ class _AddNewGloveState extends State<AddNewGlove> {
 
   @override
   Widget build(BuildContext context) {
-    String demoData =
-        "Safeline ASP-EI 4 TR012C4S11037S 10/05/2022 40kV www.asparenerji .com";
+    //String demoData = "Safeline ASP-EI 4 TR012C4S11037S 10/05/2022 40kV www.asparenerji .com";
     return Scaffold(
       appBar: AppBar(),
       body: Column(
@@ -78,9 +79,9 @@ class _AddNewGloveState extends State<AddNewGlove> {
                           },
                           child: const Text("Eldiveni Kaydet"),
                           style: OutlinedButton.styleFrom(
-                              primary: const Color(0xFF166FC0),
-                              side: const BorderSide(
-                                  color: Color(0xFF0FA9EA), width: 2),
+                              primary: ProjectColors.darkBlue,
+                              side: BorderSide(
+                                  color: ProjectColors.lightBlue, width: 2),
                               shape: const RoundedRectangleBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10)))),
@@ -95,7 +96,7 @@ class _AddNewGloveState extends State<AddNewGlove> {
                           const Text(
                             'Lütfen Eldivenin Üzerindeki\nKarekodu Okutun',
                             style: TextStyle(
-                                color: Color(0xFF166FC0),
+                                color: ProjectColors.darkBlue,
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold),
                             textAlign: TextAlign.center,
@@ -122,9 +123,10 @@ class _AddNewGloveState extends State<AddNewGlove> {
                                     },
                                   ),
                                   style: OutlinedButton.styleFrom(
-                                      primary: const Color(0xFF166FC0),
+                                      primary: ProjectColors.darkBlue,
                                       side: const BorderSide(
-                                          color: Color(0xFF0FA9EA), width: 2),
+                                          color: ProjectColors.lightBlue,
+                                          width: 2),
                                       shape: const RoundedRectangleBorder(
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(10)))),
@@ -150,9 +152,10 @@ class _AddNewGloveState extends State<AddNewGlove> {
                                     },
                                   ),
                                   style: OutlinedButton.styleFrom(
-                                      primary: const Color(0xFF166FC0),
+                                      primary: ProjectColors.darkBlue,
                                       side: const BorderSide(
-                                          color: Color(0xFF0FA9EA), width: 2),
+                                          color: ProjectColors.lightBlue,
+                                          width: 2),
                                       shape: const RoundedRectangleBorder(
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(10)))),
@@ -184,7 +187,7 @@ class _AddNewGloveState extends State<AddNewGlove> {
       key: qrKey,
       onQRViewCreated: _onQRViewCreated,
       overlay: QrScannerOverlayShape(
-          borderColor: const Color(0xFF166FC0),
+          borderColor: ProjectColors.darkBlue,
           borderRadius: 10,
           borderLength: 30,
           borderWidth: 10,

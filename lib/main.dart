@@ -3,6 +3,7 @@ import 'login_page/home_login.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'colors.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         theme: ThemeData(
-            primaryColor: const Color(0xFF0FA9EA),
+            primaryColor: ProjectColors.lightBlue,
             scaffoldBackgroundColor: Colors.white),
         title: 'Aspar',
         debugShowCheckedModeBanner: false,

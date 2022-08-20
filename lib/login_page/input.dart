@@ -1,13 +1,13 @@
 // ignore_for_file: avoid_print
 
-import 'dart:ffi';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:aspar_main/veritabani/sign_in.dart';
 import 'package:aspar_main/login_page/sign_up_page.dart';
 import 'package:cool_dropdown/cool_dropdown.dart';
+
+import 'package:aspar_main/colors.dart';
 
 class InputAlan extends StatefulWidget {
   const InputAlan({Key? key}) : super(key: key);
@@ -70,7 +70,6 @@ class InputAlanState extends State<InputAlan> {
 
   @override
   Widget build(BuildContext context) {
-    bool isUserInteractWithDropDown = false;
     return Flexible(
       child: Column(
         children: [
@@ -117,9 +116,9 @@ class InputAlanState extends State<InputAlan> {
                   },
                   child: Text("sign in".tr()),
                   style: OutlinedButton.styleFrom(
-                      primary: const Color(0xFF166FC0),
-                      side:
-                          const BorderSide(color: Color(0xFF0FA9EA), width: 2),
+                      primary: ProjectColors.darkBlue,
+                      side: const BorderSide(
+                          color: ProjectColors.lightBlue, width: 2),
                       shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(10)))),
                 ),
@@ -149,7 +148,7 @@ class InputAlanState extends State<InputAlan> {
             child: Text(
               "don't you have an account?".tr(),
               style: TextStyle(
-                color: Color(0xFF0FA9EA),
+                color: ProjectColors.lightBlue,
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               ),
@@ -164,8 +163,9 @@ class InputAlanState extends State<InputAlan> {
               },
               child: Text("sign up".tr()),
               style: OutlinedButton.styleFrom(
-                  primary: const Color(0xFF166FC0),
-                  side: const BorderSide(color: Color(0xFF0FA9EA), width: 2),
+                  primary: ProjectColors.darkBlue,
+                  side: const BorderSide(
+                      color: ProjectColors.lightBlue, width: 2),
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)))),
             ),

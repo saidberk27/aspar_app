@@ -2,6 +2,7 @@
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:aspar_main/colors.dart';
 
 class Blog extends StatelessWidget {
   const Blog({Key? key}) : super(key: key);
@@ -18,12 +19,12 @@ class Blog extends StatelessWidget {
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 48,
-                color: const Color(0xFF166FC0)),
+                color: ProjectColors.darkBlue),
           ),
         ),
         Container(
             decoration: BoxDecoration(
-                border: Border.all(width: 5, color: const Color(0xFF0FA9EA)),
+                border: Border.all(width: 5, color: ProjectColors.lightBlue),
                 borderRadius: const BorderRadius.all(Radius.circular(10.0))),
             child: Image.network(
               "https://asparenerji.com/wp-content/uploads/2021/11/hakkimizda.jpg",

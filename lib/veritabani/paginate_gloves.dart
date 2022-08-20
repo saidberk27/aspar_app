@@ -6,6 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:paginate_firestore/paginate_firestore.dart';
 import 'package:aspar_main/local_functions/expirationcalculator.dart';
 import 'package:aspar_main/local_functions/split_data.dart';
+import 'package:aspar_main/colors.dart';
 
 class GloveDatabase extends StatefulWidget {
   AsyncSnapshot? snapshot;
@@ -44,8 +45,8 @@ class _GloveDatabaseState extends State<GloveDatabase> {
         return Container(
           decoration: BoxDecoration(
               border: Border(
-            top: BorderSide(width: 1.0, color: Color(0xFF0FA9EA)),
-            bottom: BorderSide(width: 1.0, color: Color(0xFF0FA9EA)),
+            top: BorderSide(width: 1.0, color: ProjectColors.lightBlue),
+            bottom: BorderSide(width: 1.0, color: ProjectColors.lightBlue),
           )),
           child: ExpansionTile(
             maintainState: true,
@@ -89,7 +90,7 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 32,
-                            color: const Color(0xFF0FA9EA)),
+                            color: ProjectColors.lightBlue),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -102,13 +103,13 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
-                                color: const Color(0xFF0FA9EA)),
+                                color: ProjectColors.lightBlue),
                           ),
                           Text(
                             "${data!['Seri No']}",
                             style: const TextStyle(
                               fontSize: 21,
-                              color: const Color(0xFF0FA9EA),
+                              color: ProjectColors.lightBlue,
                             ),
                           )
                         ],
@@ -123,13 +124,13 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
-                                color: const Color(0xFF0FA9EA)),
+                                color: ProjectColors.lightBlue),
                           ),
                           Text(
                             "CLASS 00",
                             style: const TextStyle(
                               fontSize: 21,
-                              color: const Color(0xFF0FA9EA),
+                              color: ProjectColors.lightBlue,
                             ),
                           )
                         ],
@@ -144,14 +145,14 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 24,
-                              color: const Color(0xFF0FA9EA),
+                              color: ProjectColors.lightBlue,
                             ),
                           ),
                           Text(
                             statusText,
                             style: const TextStyle(
                               fontSize: 21,
-                              color: const Color(0xFF0FA9EA),
+                              color: ProjectColors.lightBlue,
                             ),
                           ),
                           SizedBox(width: 10),
@@ -172,13 +173,13 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
-                                color: const Color(0xFF0FA9EA)),
+                                color: ProjectColors.lightBlue),
                           ),
                           Text(
                             _formatDate(data['Uygulamaya Eklenme Tarihi']),
                             style: const TextStyle(
                               fontSize: 21,
-                              color: const Color(0xFF0FA9EA),
+                              color: ProjectColors.lightBlue,
                             ),
                           )
                         ],
@@ -193,13 +194,13 @@ class _GloveDatabaseState extends State<GloveDatabase> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
-                                color: const Color(0xFF0FA9EA)),
+                                color: ProjectColors.lightBlue),
                           ),
                           Text(
                             expirationDate,
                             style: const TextStyle(
                               fontSize: 21,
-                              color: const Color(0xFF0FA9EA),
+                              color: ProjectColors.lightBlue,
                             ),
                           )
                         ],

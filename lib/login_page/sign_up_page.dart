@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:aspar_main/veritabani/sign_up.dart';
 import 'home_login.dart';
+import 'package:aspar_main/colors.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -42,12 +43,12 @@ class _SignUpPageState extends State<SignUpPage> {
       child: Center(
         child: Container(
           height: MediaQuery.of(context).size.height / 1.2,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
               border: Border(
-            top: BorderSide(width: 4.0, color: Color(0xFF0FA9EA)),
-            left: BorderSide(width: 4.0, color: Color(0xFF166FC0)),
-            right: BorderSide(width: 4.0, color: Color(0xFF166FC0)),
-            bottom: BorderSide(width: 4.0, color: Color(0xFF0FA9EA)),
+            top: BorderSide(width: 4.0, color: ProjectColors.lightBlue),
+            left: BorderSide(width: 4.0, color: ProjectColors.darkBlue),
+            right: BorderSide(width: 4.0, color: ProjectColors.darkBlue),
+            bottom: BorderSide(width: 4.0, color: ProjectColors.lightBlue),
           )),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -56,7 +57,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF166FC0))),
+                      color: ProjectColors.darkBlue)),
               Flexible(
                 child: Padding(
                   padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
@@ -169,9 +170,9 @@ class _SignUpPageState extends State<SignUpPage> {
                     },
                     child: Text("sign up".tr()),
                     style: OutlinedButton.styleFrom(
-                        primary: const Color(0xFF166FC0),
+                        primary: ProjectColors.darkBlue,
                         side: const BorderSide(
-                            color: Color(0xFF0FA9EA), width: 2),
+                            color: ProjectColors.lightBlue, width: 2),
                         shape: const RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10)))),

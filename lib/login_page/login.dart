@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'input.dart';
 import 'logoarea.dart';
+import 'package:aspar_main/colors.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -32,10 +33,12 @@ class _LoginPageState extends State<LoginPage> {
                   height: MediaQuery.of(context).size.height / 2,
                   decoration: const BoxDecoration(
                       border: Border(
-                    top: BorderSide(width: 4.0, color: Color(0xFF0FA9EA)),
-                    left: BorderSide(width: 4.0, color: Color(0xFF166FC0)),
-                    right: BorderSide(width: 4.0, color: Color(0xFF166FC0)),
-                    bottom: BorderSide(width: 4.0, color: Color(0xFF0FA9EA)),
+                    top: BorderSide(width: 4.0, color: ProjectColors.lightBlue),
+                    left: BorderSide(width: 4.0, color: ProjectColors.darkBlue),
+                    right:
+                        BorderSide(width: 4.0, color: ProjectColors.darkBlue),
+                    bottom:
+                        BorderSide(width: 4.0, color: ProjectColors.lightBlue),
                   )),
                   child: Column(
                     children: const [
@@ -53,10 +56,10 @@ class _LoginPageState extends State<LoginPage> {
               height: MediaQuery.of(context).size.height / 1.5,
               decoration: const BoxDecoration(
                   border: Border(
-                top: BorderSide(width: 4.0, color: Color(0xFF0FA9EA)),
-                left: BorderSide(width: 4.0, color: Color(0xFF166FC0)),
-                right: BorderSide(width: 4.0, color: Color(0xFF166FC0)),
-                bottom: BorderSide(width: 4.0, color: Color(0xFF0FA9EA)),
+                top: BorderSide(width: 4.0, color: ProjectColors.lightBlue),
+                left: BorderSide(width: 4.0, color: ProjectColors.darkBlue),
+                right: BorderSide(width: 4.0, color: ProjectColors.darkBlue),
+                bottom: BorderSide(width: 4.0, color: ProjectColors.lightBlue),
               )),
               child: Column(
                 children: const [

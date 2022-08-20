@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:aspar_main/colors.dart';
 import 'post.dart';
 
 class HomePage extends StatelessWidget {
@@ -16,7 +17,7 @@ class HomePage extends StatelessWidget {
           style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 36,
-              color: const Color(0xFF0FA9EA)),
+              color: ProjectColors.lightBlue),
         ),
       ),
       Post(

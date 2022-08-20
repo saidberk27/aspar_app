@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:aspar_main/main_page/home_app.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:aspar_main/colors.dart';
+import 'package:aspar_main/local_functions/warn_user.dart';
 
 class GirisYap extends StatefulWidget {
   static GlobalKey<HomeAppState> homeAppKey = GlobalKey();
@@ -14,14 +16,10 @@ class GirisYap extends StatefulWidget {
 
   void girisYap(BuildContext context) async {
     try {
-      Fluttertoast.showToast(
-          msg: "Giriş Yapılıyor, Lütfen Bekleyiniz...",
-          toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.CENTER,
-          timeInSecForIosWeb: 1,
-          backgroundColor: Colors.grey,
-          textColor: Colors.white,
-          fontSize: 16.0);
+      Warnings(
+              message: "Giriş Yapılıyor, Lütfen Bekleyiniz...",
+              warningColor: Colors.grey)
+          .toastWarning();
       await _auth.signInWithEmailAndPassword(email: email, password: sifre);
       Navigator.pushReplacement<void, void>(
           context,
@@ -29,25 +27,17 @@ class GirisYap extends StatefulWidget {
             builder: (BuildContext context) => HomeApp(key: homeAppKey),
           ));
 
-      Fluttertoast.showToast(
-          msg: "Giriş Başarılı",
-          toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.CENTER,
-          timeInSecForIosWeb: 1,
-          backgroundColor: Colors.green,
-          textColor: Colors.white,
-          fontSize: 16.0);
+      Warnings(
+              message: "Giriş Başarılı",
+              warningColor: ProjectColors.succesColor)
+          .toastWarning();
     } catch (e) {
       debugPrint(e.toString());
-      Fluttertoast.showToast(
-          msg:
-              "Giriş Başarısız Lütfen E-Posta ve Şİfrenizi Kontrol Ediniz,${e.toString()}",
-          toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.CENTER,
-          timeInSecForIosWeb: 2,
-          backgroundColor: Colors.red,
-          textColor: Colors.white,
-          fontSize: 16.0);
+      Warnings(
+              //TODO Catch(e) den e'yi al, neden başarısız olduğunu kullanıcıya düzgünce açıkla
+              message: "Giriş Başarısız.",
+              warningColor: ProjectColors.failColor)
+          .toastWarning();
     }
   }
 

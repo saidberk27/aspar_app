@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:aspar_main/local_functions/userdata.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:aspar_main/colors.dart';
+import 'package:aspar_main/local_functions/warn_user.dart';
 
 class SaveGlove {
   final String serialNumber;
@@ -60,13 +62,8 @@ class SaveGlove {
               addDate: addDate),
         );
 
-    Fluttertoast.showToast(
-        msg: "Eldiven Başarıyla Kaydedildi",
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.green,
-        textColor: Colors.white,
-        fontSize: 16.0);
+    Warnings(
+        message: "Eldiveniniz Başarıyla Kaydedildi",
+        warningColor: ProjectColors.succesColor);
   }
 }

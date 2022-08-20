@@ -1,11 +1,8 @@
-import 'package:aspar_main/main_page/home_app.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'about_us.dart';
-import 'mygloves.dart';
-import 'contact.dart';
 import 'package:aspar_main/veritabani/sign_out.dart';
 import 'package:aspar_main/veritabani/sign_in.dart';
+import 'package:aspar_main/colors.dart';
 
 class MenuItems extends StatelessWidget {
   const MenuItems({
@@ -17,7 +14,7 @@ class MenuItems extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
           border: Border(
-        right: BorderSide(width: 3.0, color: Color(0xFF166FC0)),
+        right: BorderSide(width: 3.0, color: ProjectColors.darkBlue),
       )),
       child: ListView(
         scrollDirection: Axis.vertical,
@@ -26,7 +23,7 @@ class MenuItems extends StatelessWidget {
         children: [
           const Divider(
             thickness: 3,
-            color: Color(0xFF166FC0),
+            color: ProjectColors.darkBlue,
             height: 3,
           ),
           InkWell(
@@ -50,7 +47,7 @@ class MenuItems extends StatelessWidget {
               ),
             ),
           ),
-          const Divider(thickness: 3, color: Color(0xFF0FA9EA)),
+          const Divider(thickness: 3, color: ProjectColors.lightBlue),
           InkWell(
               child: ListTile(
             onTap: () {
@@ -66,7 +63,7 @@ class MenuItems extends StatelessWidget {
               color: Color(0xFF365059),
             ),
           )),
-          const Divider(thickness: 3, color: Color(0xFF166FC0)),
+          const Divider(thickness: 3, color: ProjectColors.darkBlue),
           InkWell(
               onTap: () {
                 GirisYap.homeAppKey.currentState?.openPage(0);
@@ -85,7 +82,7 @@ class MenuItems extends StatelessWidget {
                   color: Color(0xFF365059),
                 ),
               )),
-          const Divider(thickness: 3, color: Color(0xFF0FA9EA)),
+          const Divider(thickness: 3, color: ProjectColors.lightBlue),
           InkWell(
             onTap: () {},
             child: ListTile(
@@ -103,7 +100,7 @@ class MenuItems extends StatelessWidget {
               ),
             ),
           ),
-          const Divider(thickness: 3, color: Color(0xFF166FC0)),
+          const Divider(thickness: 3, color: ProjectColors.darkBlue),
           InkWell(
             onTap: () {
               GirisYap.homeAppKey.currentState?.openPage(3);
@@ -123,7 +120,7 @@ class MenuItems extends StatelessWidget {
               ),
             ),
           ),
-          const Divider(thickness: 3, color: Color(0xFF0FA9EA)),
+          const Divider(thickness: 3, color: ProjectColors.lightBlue),
           InkWell(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
@@ -144,7 +141,7 @@ class MenuItems extends StatelessWidget {
               ),
             ),
           ),
-          const Divider(thickness: 3, height: 3, color: Color(0xFF166FC0)),
+          const Divider(thickness: 3, height: 3, color: ProjectColors.darkBlue),
         ],
       ),
     );
